@@ -1,0 +1,94 @@
+﻿@model Hochtief.Models.ScheduleWoSubTask
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ScheduleWoSubTask</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+            <div class="form-group">
+                <label asp-for="TaskName" class="control-label"></label>
+                <input asp-for="TaskName" class="form-control" />
+                <span asp-validation-for="TaskName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocL1" class="control-label"></label>
+                <input asp-for="LocL1" class="form-control" />
+                <span asp-validation-for="LocL1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocL2" class="control-label"></label>
+                <input asp-for="LocL2" class="form-control" />
+                <span asp-validation-for="LocL2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocL3" class="control-label"></label>
+                <input asp-for="LocL3" class="form-control" />
+                <span asp-validation-for="LocL3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pdsL1" class="control-label"></label>
+                <input asp-for="pdsL1" class="form-control" />
+                <span asp-validation-for="pdsL1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pdsL2" class="control-label"></label>
+                <input asp-for="pdsL2" class="form-control" />
+                <span asp-validation-for="pdsL2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pdsL3" class="control-label"></label>
+                <input asp-for="pdsL3" class="form-control" />
+                <span asp-validation-for="pdsL3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pdsL4" class="control-label"></label>
+                <input asp-for="pdsL4" class="form-control" />
+                <span asp-validation-for="pdsL4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="level" class="control-label"></label>
+                <input asp-for="level" class="form-control" />
+                <span asp-validation-for="level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="path" class="control-label"></label>
+                <input asp-for="path" class="form-control" />
+                <span asp-validation-for="path" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Master" class="control-label"></label>
+                <input asp-for="Master" class="form-control" />
+                <span asp-validation-for="Master" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskOriginal" class="control-label"></label>
+                <input asp-for="TaskOriginal" class="form-control" />
+                <span asp-validation-for="TaskOriginal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pdsDescr" class="control-label"></label>
+                <input asp-for="pdsDescr" class="form-control" />
+                <span asp-validation-for="pdsDescr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bautagesbericht" class="control-label"></label>
+                <input asp-for="Bautagesbericht" class="form-control" />
+                <span asp-validation-for="Bautagesbericht" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit"  value="Create" class="btn btn-primary"/>
+                <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

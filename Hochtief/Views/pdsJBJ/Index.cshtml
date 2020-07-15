@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Hochtief.Models.pdsJBJ>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locl1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locl2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locl3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locl4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.locl5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Path)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Master)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locl1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locl2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locl3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locl4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.locl5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Master)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

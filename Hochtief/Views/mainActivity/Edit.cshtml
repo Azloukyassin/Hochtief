@@ -1,0 +1,113 @@
+﻿@model Hochtief.Models.MainActivity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MainActivity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" readonly class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemno" class="control-label"></label>
+                <input asp-for="itemno" class="form-control" />
+                <span asp-validation-for="itemno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rowid" class="control-label"></label>
+                <input asp-for="rowid" class="form-control" />
+                <span asp-validation-for="rowid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="formversion" class="control-label"></label>
+                <input asp-for="formversion" class="form-control" />
+                <span asp-validation-for="formversion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds01" class="control-label"></label>
+                <input asp-for="pds01" class="form-control" />
+                <span asp-validation-for="pds01" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds02" class="control-label"></label>
+                <input asp-for="pds02" class="form-control" />
+                <span asp-validation-for="pds02" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds03" class="control-label"></label>
+                <input asp-for="pds03" class="form-control" />
+                <span asp-validation-for="pds03" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds04" class="control-label"></label>
+                <input asp-for="pds04" class="form-control" />
+                <span asp-validation-for="pds04" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds05" class="control-label"></label>
+                <input asp-for="pds05" class="form-control" />
+                <span asp-validation-for="pds05" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds06" class="control-label"></label>
+                <input asp-for="pds06" class="form-control" />
+                <span asp-validation-for="pds06" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="activity" class="control-label"></label>
+                <input asp-for="activity" class="form-control" />
+                <span asp-validation-for="activity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="activitytype" class="control-label"></label>
+                <input asp-for="activitytype" class="form-control" />
+                <span asp-validation-for="activitytype" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="activitytypedetail" class="control-label"></label>
+                <input asp-for="activitytypedetail" class="form-control" />
+                <span asp-validation-for="activitytypedetail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="kolonnenae" class="control-label"></label>
+                <input asp-for="kolonnenae" class="form-control" />
+                <span asp-validation-for="kolonnenae" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="contractor" class="control-label"></label>
+                <input asp-for="contractor" class="form-control" />
+                <span asp-validation-for="contractor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hours_activity" class="control-label"></label>
+                <input asp-for="hours_activity" class="form-control" />
+                <span asp-validation-for="hours_activity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="activity_status" class="control-label"></label>
+                <input asp-for="activity_status" class="form-control" />
+                <span asp-validation-for="activity_status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="activityInternExtern" class="control-label"></label>
+                <input asp-for="activityInternExtern" class="form-control" />
+                <span asp-validation-for="activityInternExtern" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"/>
+                <a asp-action="Index" class="btn btn-outline-light">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+

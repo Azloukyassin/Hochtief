@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Hochtief.Models.ScheduleWoSubTask>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocL1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocL2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocL3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdsL1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdsL2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdsL3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdsL4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.path)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Master)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskOriginal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pdsDescr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bautagesbericht)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocL1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocL2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocL3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdsL1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdsL2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdsL3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdsL4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.path)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Master)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskOriginal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdsDescr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bautagesbericht)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

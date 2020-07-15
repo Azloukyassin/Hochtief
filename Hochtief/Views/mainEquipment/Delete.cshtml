@@ -1,0 +1,194 @@
+﻿@model Hochtief.Models.MainEquipment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MainEquipment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.itemno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.itemno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rowid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rowid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.formversion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.formversion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.activity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.activity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment01)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment01)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment01Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment01Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment01Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment01Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment01Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment01Hours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment02)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment02)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment02Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment02Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment02Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment02Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment02Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment02Hours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment03)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment03)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment03Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment03Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment03Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment03Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment03Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment03Hours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment04)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment04)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment04Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment04Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment04Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment04Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment04Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment04Hours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment05)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment05)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment05Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment05Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment05Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment05Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment05Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment05Hours)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment06)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment06)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment06Contractor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment06Contractor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment06Num)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment06Num)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.equipment06Hours)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.equipment06Hours)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+    </form>
+</div>

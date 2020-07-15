@@ -1,0 +1,81 @@
+﻿@model Hochtief.Models.MainAdditionalWorks
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MainAdditionalWorks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" readonly class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemno" class="control-label"></label>
+                <input asp-for="itemno" class="form-control" />
+                <span asp-validation-for="itemno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rowid" class="control-label"></label>
+                <input asp-for="rowid" class="form-control" />
+                <span asp-validation-for="rowid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eventCategory" class="control-label"></label>
+                <input asp-for="eventCategory" class="form-control" />
+                <span asp-validation-for="eventCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds01" class="control-label"></label>
+                <input asp-for="pds01" class="form-control" />
+                <span asp-validation-for="pds01" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds02" class="control-label"></label>
+                <input asp-for="pds02" class="form-control" />
+                <span asp-validation-for="pds02" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="additionalWorksPds04" class="control-label"></label>
+                <input asp-for="additionalWorksPds04" class="form-control" />
+                <span asp-validation-for="additionalWorksPds04" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="additionalWorksPds05" class="control-label"></label>
+                <input asp-for="additionalWorksPds05" class="form-control" />
+                <span asp-validation-for="additionalWorksPds05" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="additionalWorksPds06" class="control-label"></label>
+                <input asp-for="additionalWorksPds06" class="form-control" />
+                <span asp-validation-for="additionalWorksPds06" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="additionalWorksActivity" class="control-label"></label>
+                <input asp-for="additionalWorksActivity" class="form-control" />
+                <span asp-validation-for="additionalWorksActivity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="eventHours" class="control-label"></label>
+                <input asp-for="eventHours" class="form-control" />
+                <span asp-validation-for="eventHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="additionalWorksTxt" class="control-label"></label>
+                <input asp-for="additionalWorksTxt" class="form-control" />
+                <span asp-validation-for="additionalWorksTxt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-light">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

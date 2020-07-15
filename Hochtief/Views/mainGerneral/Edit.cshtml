@@ -1,0 +1,104 @@
+﻿@model Hochtief.Models.MainGeneral
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MainGeneral</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" readonly class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemno" class="control-label"></label>
+                <input asp-for="itemno" class="form-control" />
+                <span asp-validation-for="itemno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="rowid" class="control-label"></label>
+                <input asp-for="rowid" class="form-control" />
+                <span asp-validation-for="rowid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="formversion" class="control-label"></label>
+                <input asp-for="formversion" class="form-control" />
+                <span asp-validation-for="formversion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="taskname" class="control-label"></label>
+                <input asp-for="taskname" class="form-control" />
+                <span asp-validation-for="taskname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bautagebuchAutoPolier" class="control-label"></label>
+                <input asp-for="bautagebuchAutoPolier" class="form-control" />
+                <span asp-validation-for="bautagebuchAutoPolier" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reportID" class="control-label"></label>
+                <input asp-for="reportID" class="form-control" />
+                <span asp-validation-for="reportID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportDate" class="control-label"></label>
+                <input asp-for="ReportDate" class="form-control" />
+                <span asp-validation-for="ReportDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportStartTime" class="control-label"></label>
+                <input asp-for="ReportStartTime" class="form-control" />
+                <span asp-validation-for="ReportStartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportEndTime" class="control-label"></label>
+                <input asp-for="ReportEndTime" class="form-control" />
+                <span asp-validation-for="ReportEndTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportBreakTimeNum" class="control-label"></label>
+                <input asp-for="ReportBreakTimeNum" class="form-control" />
+                <span asp-validation-for="ReportBreakTimeNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportHours" class="control-label"></label>
+                <input asp-for="ReportHours" class="form-control" />
+                <span asp-validation-for="ReportHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreigabeDate" class="control-label"></label>
+                <input asp-for="FreigabeDate" class="form-control" />
+                <span asp-validation-for="FreigabeDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreigabeAutor" class="control-label"></label>
+                <input asp-for="FreigabeAutor" class="form-control" />
+                <span asp-validation-for="FreigabeAutor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FreigabeDate1" class="control-label"></label>
+                <input asp-for="FreigabeDate1" class="form-control" />
+                <span asp-validation-for="FreigabeDate1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="genehmigungAutor" class="control-label"></label>
+                <input asp-for="genehmigungAutor" class="form-control" />
+                <span asp-validation-for="genehmigungAutor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-light">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

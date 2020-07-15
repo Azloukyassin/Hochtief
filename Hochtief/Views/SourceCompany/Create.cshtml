@@ -1,0 +1,50 @@
+﻿@model Hochtief.Models.SourceCompany
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Source_Company</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="En_company" class="control-label"></label>
+                <input asp-for="En_company" class="form-control" />
+                <span asp-validation-for="En_company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="De_firma" class="control-label"></label>
+                <input asp-for="De_firma" class="form-control" />
+                <span asp-validation-for="De_firma" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="code" class="control-label"></label>
+                <input asp-for="code" class="form-control" />
+                <span asp-validation-for="code" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company_type" class="control-label"></label>
+                <input asp-for="Company_type" class="form-control" />
+                <span asp-validation-for="Company_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pds01" class="control-label"></label>
+                <input asp-for="pds01" class="form-control" />
+                <span asp-validation-for="pds01" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

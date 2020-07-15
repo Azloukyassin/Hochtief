@@ -1,0 +1,203 @@
+﻿@model IEnumerable<Hochtief.Models.MainEquipment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.itemno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rowid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.formversion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.activity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment01Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment01Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment01Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment02Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment02Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment02Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment03)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment03Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment03Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment03Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment04)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment04Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment04Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment04Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment05)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment05Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment05Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment05Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment06)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment06Contractor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment06Num)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.equipment06Hours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.itemno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rowid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.formversion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.activity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment01Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment01Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment01Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment02Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment02Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment02Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment03)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment03Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment03Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment03Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment04Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment04Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment04Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment05)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment05Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment05Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment05Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment06)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment06Contractor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment06Num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.equipment06Hours)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.id  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

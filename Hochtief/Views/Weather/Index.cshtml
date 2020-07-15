@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Hochtief.Models.Weather>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Weather</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp_time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.temp_condition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.datum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.temp_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.temp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.temp_condition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datum)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

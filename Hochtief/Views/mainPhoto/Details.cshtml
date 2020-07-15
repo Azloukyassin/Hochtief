@@ -1,0 +1,54 @@
+﻿@model Hochtief.Models.MainPhotos
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MainPhotos</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.itemno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.itemno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.taskname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.taskname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.reportID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.reportID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReportDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReportDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.fotosActivitySelection)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.fotosActivitySelection)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-outline-info">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-outline-info">Edit</a>
+</div>
