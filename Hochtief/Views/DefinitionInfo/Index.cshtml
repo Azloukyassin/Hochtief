@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Hochtief.Models.DefinitionInfo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-info">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.projekt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.projektID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sharepoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sharepointListen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spMain)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.frontendName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.updateDB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.backendPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spBTBIntern)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spBTBExtern)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BTB_Excel_Template)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.projekt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.projektID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sharepoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sharepointListen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spMain)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.frontendName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.updateDB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.backendPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spBTBIntern)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spBTBExtern)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BTB_Excel_Template)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.id  }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.id  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

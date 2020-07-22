@@ -30,7 +30,16 @@ namespace Hochtief.Models
         public DbSet<pdsJBJ> pdsJBJs {get; set;}
         public DbSet<DefinitionProjectTables> dtables {get;set;}
         public DbSet<ScheduleWoSubTask> scheduleWoSubs {get;set;}
-        public DbSet<ConstructionDailyPhoto> constructionDailyPhotos { get; set; }
+        public DbSet<ConstructionDailyPhoto> constructionDailyPhotos {get; set;}
+        public DbSet<MainEventDoku> mainEventDokus { get; set; }
+        public DbSet<Labour> labours {get;set;}
+        public DbSet<DefinitionInfo> definitionInfos {get;set;}
+
+
+        public static implicit operator TestDBContext(ConstructionDailyPhoto v)
+        {
+            throw new NotImplementedException();
+        }
 
         /*public static implicit operator TestDBContext(ConstructionDailyPhoto v)
         {

@@ -5,18 +5,42 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-#footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
+.gridcontainer {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 200px 1fr 100px;
+    grid-template-columns: 25% 25% 25% 25%;
 }
-
-#test {
-    color: red;
+header {
+    background: tomato;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+article {
+    background: gold;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+aside {
+    background: lightgreen;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+footer {
+    background: lightblue;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+test {
+    color:red;
 }
 body {
     background-color:blue;

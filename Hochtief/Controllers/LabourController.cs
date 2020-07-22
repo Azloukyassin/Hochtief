@@ -6,13 +6,11 @@ using Hochtief.Models;
 using Hochtief.Models.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
 namespace Hochtief.Controllers
 {
-    public class LabourController : Controller
+    public class LabourController:Controller
     {
         private readonly IRepostory<Labour> testRepostory;
-
         public LabourController(IRepostory<Labour> TestRepostory)
         {
             this.testRepostory = TestRepostory;
@@ -23,20 +21,17 @@ namespace Hochtief.Controllers
             var test = testRepostory.List();
             return View(test);
         }
-
         // GET: Test/Details/5
         public ActionResult Details(int id)
         {
             var ob = testRepostory.Find(id);
             return View(ob);
         }
-
         // GET: Test/Create
         public ActionResult Create()
         {
             return View();
         }
-
         // POST: Test/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -52,14 +47,12 @@ namespace Hochtief.Controllers
                 return View();
             }
         }
-
         // GET: Test/Edit/5
         public ActionResult Edit(int id)
         {
             var ob = testRepostory.Find(id);
             return View(ob);
         }
-
         // POST: Test/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -68,7 +61,6 @@ namespace Hochtief.Controllers
             try
             {
                 testRepostory.Update(id, test);
-
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -76,14 +68,12 @@ namespace Hochtief.Controllers
                 return View();
             }
         }
-
         // GET: Test/Delete/5
         public ActionResult Delete(int id)
         {
             var ob = testRepostory.Find(id);
             return View(ob);
         }
-
         // POST: Test/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -92,7 +82,6 @@ namespace Hochtief.Controllers
             try
             {
                 testRepostory.Delete(id);
-
                 return RedirectToAction(nameof(Index));
             }
             catch
