@@ -8,14 +8,13 @@ namespace Hochtief.Models
     public class Weather
     {
         public int id { get; set; }
-
+     
         public string temp_time { get; set; }
-
+        
         public string temp { get; set; }
-
+        
         public string temp_condition {get;set;}
-
+        
         public string datum {get; set;}
-       
     }
 }

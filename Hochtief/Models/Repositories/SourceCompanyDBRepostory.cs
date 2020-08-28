@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Hochtief.Models.Repositories
 {
-    public class SourceCompanyDBRepostory :IRepostory<SourceCompany>
+    public class SourceCompanyDBRepostory : IRepostory<SourceCompany>
     {
         TestDBContext db;
         public SourceCompanyDBRepostory(TestDBContext _db)
@@ -39,4 +39,3 @@ namespace Hochtief.Models.Repositories
         }
     }
 }
-

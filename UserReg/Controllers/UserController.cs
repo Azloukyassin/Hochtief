@@ -1,11 +1,13 @@
 ﻿using Microsoft.Azure.Documents;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using UserReg.Models; 
+using UserReg.Models;
+using UserRegistierung;
 
 namespace UserReg.Controllers
 {
@@ -14,17 +16,19 @@ namespace UserReg.Controllers
         [HttpGet]
         public ActionResult AddorEdit(int id=0)
         {
-            User usermodel = new User(); 
+            UserTab usermodel = new UserTab(); 
             return View(usermodel);
-        }
-        // Muss nachschauen 
-        [HttpPost]
-        public ActionResult AddorEdit(User userModel)
+        }    
+        public ActionResult AddorEdit(UserTab userModel)
         {
-            using ()
+            using (MohamedAzloukSandboxEntities model = new MohamedAzloukSandboxEntities())
             {
-
+                model.UserTab.Add(userModel);
+                model.SaveChanges();
             }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("AddorEdit",new UserTab());
         }
     }
 }

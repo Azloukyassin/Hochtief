@@ -7,8 +7,7 @@ namespace Hochtief.Models
 {
     public class TestTabelle
     {
-        public int id { get; set; }
-
+        public int id {get; set;}
         public string fullname {get;set;}
     }
 }

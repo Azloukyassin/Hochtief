@@ -28,23 +28,10 @@ namespace Hochtief
             services.AddMvc();
             //services.AddScoped<IRepostory<TestTabelle>, TestDBRepostory>();
             services.AddScoped<IRepostory<SourceCompany>, SourceCompanyDBRepostory>();
-          //  services.AddScoped<IRepostory<Labour>, LabourDBRepostory>();
+           // services.AddScoped<IRepostory<Labour>, LabourDBRepostory>();
             services.AddScoped<IRepostory<SourceRole>, SourceRoleDBRepostory>();
             services.AddScoped<IRepostory<Weather>, WeatherDBRepostory>();
-            services.AddScoped<IRepostory<DefinitionPDSLevel>, DefinitionPDSLevelDBRepostory>();
-            services.AddScoped<IRepostory<MainActivity>, MainActivityDBRepostroy>();
-            services.AddScoped<IRepostory<MainActivitySubTasks>, mainActivitySubTasksDBRepostory>();
-            services.AddScoped<IRepostory<MainAdditionalWorks>, MainAdditionalWorkDBRepostory>();
-            services.AddScoped<IRepostory<MainField2BIM>, mainField2BIMDBRepostory>();
-            services.AddScoped<IRepostory<MainGeneral>, mainGerneralDBRepostory>();
-            services.AddScoped<IRepostory<MainPhotos>, mainPhotoDBRepostory>();
-            services.AddScoped<IRepostory<MainSignaturePhotos>, mainSignatureDBRepostory>();
-            services.AddScoped<IRepostory<Pds>, pdsDBRepostory>();
-            services.AddScoped<IRepostory<Schedule>, ScheduleDBRepostory>();
-            services.AddScoped<IRepostory<Schedule>, ScheduleDBRepostory>();
-            services.AddScoped<IRepostory<Schedule>, ScheduleDBRepostory>();
-            services.AddScoped<IRepostory<DefinitionProjectTables>,DefinitionProjectTablesDBRepostory>();
-            services.AddScoped<IRepostory<pdsJBJ>, PdsJBJDBRepostory>();
+            services.AddScoped<IRepostory<SourceEquipment>, SourceEquipmentDBRepostory>(); 
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddDbContext<TestDBContext>(options =>
             {
