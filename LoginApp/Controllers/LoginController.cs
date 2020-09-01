@@ -21,10 +21,11 @@ namespace UserReg.Controllers
         {
             using (MohamedAzloukSandboxEntities db = new MohamedAzloukSandboxEntities())
             {
-                var userDetails = db.UserTab.Where(x => x.Username == userModel.Username && x.Password == userModel.Password).FirstOrDefault();
+                var userDetails = db.UserTab.Where(x => x.Username == userModel.Username && x.password == userModel.password).FirstOrDefault();
                 if (userDetails == null)
                 {
-                    return View("Login", "Index", userModel);
+                    userModel.LoginErrorMessage = " Falsch Username oder Password"; 
+                    return View("Index", userModel);
                 }
             }
             return View();

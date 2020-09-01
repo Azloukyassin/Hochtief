@@ -22,10 +22,9 @@ namespace LoginApp.Controllers
             using (MohamedAzloukSandboxEntities model = new MohamedAzloukSandboxEntities() )
             {
                 model.UserTab.Add(userModel);
-                model.SaveChanges(); 
+                //model.SaveChanges(); 
+                model.SaveChangesAsync(); 
             }
-
-
             ModelState.Clear();
             ViewBag.SuccessMessage = "Registration Successful ";
             return View("AddOrEdit", new UserTab()); 
