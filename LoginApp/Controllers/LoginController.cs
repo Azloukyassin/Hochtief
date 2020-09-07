@@ -19,16 +19,18 @@ namespace UserReg.Controllers
         [HttpPost]
         public ActionResult Autherize(UserTab userModel)
         {
-            using (MohamedAzloukSandboxEntities db = new MohamedAzloukSandboxEntities())
+            using(MohamedAzloukSandboxEntities db = new MohamedAzloukSandboxEntities())
             {
                 var userDetails = db.UserTab.Where(x => x.Username == userModel.Username && x.password == userModel.password).FirstOrDefault();
                 if (userDetails == null)
                 {
-                    userModel.LoginErrorMessage = " Falsch Username oder Password"; 
+                    userModel.LoginErrorMessage = " Falsch Username oder Password";
                     return View("Index", userModel);
                 }
+                else
+                    return View("Projects", "Index"); 
             }
-            return View();
+            //return View();
         }
     }
 }

@@ -14,15 +14,18 @@
     .field-validation-error {
         color:red ; 
     }
+    .desginn {
+        color:blue ; 
+    }
 </style>
-<h2>Login</h2>
+<h2 class="desginn">Login-Page</h2>
 <div id="login-div">
     @using (Html.BeginForm("Autherize","Login", FormMethod.Post))
     {
     <tabel>
 
         <tr>
-            <td>@Html.LabelFor(model => model.Username)</td>
+            <td>@Html.LabelFor(model => model.Username) :</td>
             <td>@Html.EditorFor(model => model.Username)</td>
         </tr>
         <tr>
@@ -30,7 +33,7 @@
             <td>@Html.ValidationMessageFor(model => model.Username)</td>
         </tr>
         <tr>
-            <td>@Html.LabelFor(model => model.password)</td>
+            <td>@Html.LabelFor(model => model.password) :</td>
             <td>@Html.EditorFor(model => model.password)</td>
         </tr>
         <tr>

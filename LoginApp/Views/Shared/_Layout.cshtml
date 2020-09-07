@@ -4,11 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
+    <title>@ViewBag.Title - Hochtief AG-Mangement</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <style>
+        .desgin {
+            color: black;
+            background-color : darkcyan
+        }
+    </style>
+    <img src="~/images/bild.png" height="50" width="160" alt="Photo von Hochtief Logo" />
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -29,12 +36,11 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        <hr/>
+        <footer class="desgin">
             <p>&copy; @DateTime.Now.Year - Hochtief AG</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

@@ -31,6 +31,6 @@ namespace LoginApp.Models
         public string ConfirmPassword {get;set;}
         [Required(ErrorMessage = "This Field is Required please")]
         public Nullable<bool> isAdmin {get;set;}
-        public string LoginErrorMessage { get; set;}
+        public string LoginErrorMessage {get; set;}
     }
 }

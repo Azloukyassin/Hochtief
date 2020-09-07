@@ -1,5 +1,43 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
 }
-<li>@Html.ActionLink("Registieren", "AddorEdit", "User")</li>
-<li>@Html.ActionLink("Anmelden", "Index", "Login")</li>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    .card-pricing.popular {
+        z-index: 1;
+        border: 3px solid #007bff;
+    }
+    .card-pricing .list-unstyled li {
+        padding: .5rem 0;
+        color: #6c757d;
+    }
+</style>
+<div class="container mb-5 mt-5">
+    <div class="pricing card-deck flex-column flex-md-row mb-3">
+        <div class="card card-pricing text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Login</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">$<span class="price">3</span><span class="h6 text-muted ml-2">/ per month</span></h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li> Klicken Sie auf Login dann Fertig !</li>
+                </ul>
+                <input type="button" value="Login" onclick="location.href='@Url.Action("Index", "Login")'" />
+            </div>
+        </div>
+        <div class="card card-pricing text-center px-3 mb-4">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">Registration</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="45">$<span class="price">9</span><span class="h6 text-muted ml-2">/ per month</span></h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Geht schnell und einfach ! </li>
+                </ul>
+                <input type="button" value="Registieren Sie sich" onclick="location.href='@Url.Action("AddOrEdit","User")'" />
+            </div>
+        </div>
+
+    </div>
