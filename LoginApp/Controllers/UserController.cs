@@ -19,7 +19,7 @@ namespace LoginApp.Controllers
         [HttpPost]
         public ActionResult AddOrEdit(UserTab userModel)
         {
-            using (MohamedAzloukSandboxEntities model = new MohamedAzloukSandboxEntities())
+            using (MohamedAzloukSandboxEntities1 model = new MohamedAzloukSandboxEntities1())
             {
                 model.UserTab.Add(userModel);
                 model.SaveChanges();

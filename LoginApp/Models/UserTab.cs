@@ -16,21 +16,22 @@ namespace LoginApp.Models
 
     public partial class UserTab
     {
-        public int ID {get;set;}
+        public int ID { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string Username {get;set;}
+        public string Username { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string Projektname {get;set;}
+        public string Projektname { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         [DataType(DataType.Password)]
+        public string password { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string password {get;set;}
         [DataType(DataType.Password)]
-        [Required(ErrorMessage = "This Field is Required please")]
         [DisplayName("Confirm Password")]
         [Compare("password")]
-        public string ConfirmPassword {get;set;}
-        [Required(ErrorMessage = "This Field is Required please")]
-        public Nullable<bool> isAdmin {get;set;}
-        public string LoginErrorMessage {get; set;}
+        public string confrimPassword { get; set; }
+        
+        public bool isAdmin { get; set; }
+      
+        public string LoginErrorMessage { get; set; }
     }
 }
