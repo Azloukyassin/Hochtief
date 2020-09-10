@@ -1,0 +1,58 @@
+﻿@model TestProject.Usertest
+
+
+@{
+    ViewBag.Title = "Login";
+}
+<style>
+    #login-div {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        border: 1px solid #00ffff;
+        padding: 10px 10px;
+    }
+
+    .field-validation-error {
+        color: red;
+    }
+</style>
+<h2>Login</h2>
+<div id="login-div">
+    @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
+    {
+        <tabel>
+
+            <tr>
+                <td>@Html.LabelFor(model => model.username)</td>
+                <td>@Html.EditorFor(model => model.username)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.Username)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.password)</td>
+                <td>@Html.EditorFor(model => model.password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>@Html.ValidationMessageFor(model => model.password)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Login" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label class="field-validation-error">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                </td>
+            </tr>
+        </tabel>
+    }
+</div>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
