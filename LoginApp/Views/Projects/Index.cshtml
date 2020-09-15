@@ -2,8 +2,6 @@
 @{
     ViewBag.Title = "Index";
 }
-
-
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,8 +21,13 @@
 
 <body id="page-top">
     <style>
+        .dataproject {
+            padding: 50px ; 
+            margin-left:50px ; 
+            margin-right: 50px ; 
+        }
         .project {
-            color: blueviolet ; 
+            color: blueviolet ;   
         }
     </style>
     <!-- Navigation-->
@@ -35,19 +38,20 @@
             <div class="mx-auto text-center">
                 <h1 class="mx-auto my-0 text-uppercase">Hochtief</h1>
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">App-Management Damit Besser zu gehen </h2>
-
             </div>
         </div>
-        <label class="project"> Project-Name : </label>
-        <input list="projects" name="project">
-        <datalist id="projects">
-            <option value="A40">
-            <option value="A6">
-            <option value="ICE">
-            <option value="MDB">
-            <option value="U3">
-        </datalist>
-        <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+        <div class="dataproject">
+            <label class="project"> Project-Name : </label>
+            <input list="projects" name="project">
+            <datalist id="projects">
+                <option value="A40">
+                <option value="A6">
+                <option value="ICE">
+                <option value="MDB">
+                <option value="U3">
+            </datalist>
+            <a class="btn btn-primary js-scroll-trigger" href="#about">Let's Go </a>
+        </div>
     </header>
     <!-- About-->
     <section class="about-section text-center" id="about">
@@ -168,7 +172,7 @@
         </div>
     </section>
     <!-- Footer-->
-    <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © 2020 HOCHTIEF Solutions AG</div></footer>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>

@@ -29,9 +29,9 @@ namespace LoginApp.Models
         [DisplayName("Confirm Password")]
         [Compare("password")]
         public string confrimPassword { get; set; }
-        
+
         public bool isAdmin { get; set; }
-      
+
         public string LoginErrorMessage { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace UserReg.Controllers
         [HttpPost]
         public ActionResult Autherize(UserTab userModel)
         {
-            using(MohamedAzloukSandboxEntities1 db = new MohamedAzloukSandboxEntities1())
+            using(MohamedAzloukSandboxEntities2 db = new MohamedAzloukSandboxEntities2())
             {
                 var userDetails = db.UserTab.Where(x => x.Username == userModel.Username && x.password == userModel.password).FirstOrDefault();
                 if (userDetails == null)

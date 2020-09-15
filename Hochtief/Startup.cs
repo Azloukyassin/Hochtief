@@ -30,6 +30,7 @@ namespace Hochtief
             services.AddScoped<IRepostory<SourceCompany>, SourceCompanyDBRepostory>();
            // services.AddScoped<IRepostory<Labour>, LabourDBRepostory>();
             services.AddScoped<IRepostory<SourceRole>, SourceRoleDBRepostory>();
+           // services.AddScoped<IRepostory<SourceStaff>, SourceStaffDBRepostory>();
             services.AddScoped<IRepostory<Weather>, WeatherDBRepostory>();
             services.AddScoped<IRepostory<SourceEquipment>, SourceEquipmentDBRepostory>(); 
             services.AddMvc(options => options.EnableEndpointRouting = false);

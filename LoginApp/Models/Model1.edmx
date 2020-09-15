@@ -33,7 +33,7 @@
           <Property Name="password" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="isAdmin" Type="Boolean" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="MohamedAzloukSandboxEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MohamedAzloukSandboxEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserTab" EntityType="Self.UserTab" />
         </EntityContainer>
       </Schema>
@@ -41,7 +41,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MohamedAzloukSandboxModelStoreContainer" CdmEntityContainer="MohamedAzloukSandboxEntities1">
+        <EntityContainerMapping StorageEntityContainer="MohamedAzloukSandboxModelStoreContainer" CdmEntityContainer="MohamedAzloukSandboxEntities2">
           <EntitySetMapping Name="UserTab">
             <EntityTypeMapping TypeName="MohamedAzloukSandboxModel.UserTab">
               <MappingFragment StoreEntitySet="UserTab">

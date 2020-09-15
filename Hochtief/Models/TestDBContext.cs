@@ -19,7 +19,7 @@ namespace Hochtief.Models
         public DbSet<LabourInternal> LabourInt {get; set;}
        //public DbSet<Labour> labours {get;set;}
         public DbSet<SourceEquipment> sourceEquipment {get; set;}
-        public DbSet<SourceLabour> sourceLabours { get; set;}
-        public DbSet<SourceStaff> sourceStaffs {get;set;}
+       //public DbSet<SourceLabour> sourceLabours { get; set;}
+     //   public DbSet<SourceStaff> sourceStaffs {get;set;} 
     }
 }
