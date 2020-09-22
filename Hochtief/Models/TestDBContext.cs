@@ -1,4 +1,5 @@
 ﻿using BigApp.Models;
+using HomeProject.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,9 @@ namespace Hochtief.Models
         public DbSet<SourceCompany> sourceCompanies {get; set;}
         public DbSet<Weather> Weather {get; set;}
         public DbSet<LabourInternal> LabourInt {get; set;}
-       //public DbSet<Labour> labours {get;set;}
+       //public DbSet<Labour> labours {get;set;}  
         public DbSet<SourceEquipment> sourceEquipment {get; set;}
        //public DbSet<SourceLabour> sourceLabours { get; set;}
-     //   public DbSet<SourceStaff> sourceStaffs {get;set;} 
+       //public DbSet<SourceStaff> sourceStaffs {get;set;} 
     }
 }

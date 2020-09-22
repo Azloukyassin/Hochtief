@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Hochtief.Models;
 using Hochtief.Models.Repositories;
+using HomeProject.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Hochtief.Controllers
+
+namespace HomeProject.Controllers
 {
     public class SourceEquipmentController : Controller
     {
-        private readonly IRepostory<SourceEquipment> testRepostory;
+        private readonly IRepostory<Models.SourceEquipment> testRepostory;
         public SourceEquipmentController(IRepostory<SourceEquipment> TestRepostory)
         {
             this.testRepostory = TestRepostory;
@@ -22,7 +23,7 @@ namespace Hochtief.Controllers
             var test = testRepostory.List();
             return View(test);
         }
-
+   
         // GET: Test/Details/5
         public ActionResult Details(int id)
         {
@@ -35,7 +36,6 @@ namespace Hochtief.Controllers
         {
             return View();
         }
-
         // POST: Test/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,14 +51,12 @@ namespace Hochtief.Controllers
                 return View();
             }
         }
-
         // GET: Test/Edit/5
         public ActionResult Edit(int id)
         {
             var ob = testRepostory.Find(id);
             return View(ob);
         }
-
         // POST: Test/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -67,7 +65,6 @@ namespace Hochtief.Controllers
             try
             {
                 testRepostory.Update(id, test);
-
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -89,7 +86,6 @@ namespace Hochtief.Controllers
             try
             {
                 testRepostory.Delete(id);
-
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -99,3 +95,4 @@ namespace Hochtief.Controllers
         }
     }
 }
+

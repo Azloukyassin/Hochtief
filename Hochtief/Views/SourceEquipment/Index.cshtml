@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Hochtief.Models.SourceEquipment>
+﻿@model IEnumerable<HomeProject.Models.SourceEquipment>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1> Alle Einträge </h1>
 
 <p>
     <a asp-action="Create" class="btn btn-primary">Create New</a>
@@ -16,16 +16,16 @@
                 @Html.DisplayNameFor(model => model.id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.En_equipment)
+                @Html.DisplayNameFor(model => model.En_Equipment)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.De_equipment)
+                @Html.DisplayNameFor(model => model.De_Equipment)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.code_Company)
+                @Html.DisplayNameFor(model => model.codeCompany)
             </th>
             <th></th>
         </tr>
@@ -37,19 +37,19 @@
                 @Html.DisplayFor(modelItem => item.id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.En_equipment)
+                @Html.DisplayFor(modelItem => item.En_Equipment)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.De_equipment)
+                @Html.DisplayFor(modelItem => item.De_Equipment)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.code)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.code_Company)
+                @Html.DisplayFor(modelItem => item.codeCompany)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.id }) |
+                @Html.ActionLink("Edit", "Edit", new {  id=item.id  }) |
                 @Html.ActionLink("Details", "Details", new {  id=item.id  }) |
                 @Html.ActionLink("Delete", "Delete", new {  id=item.id  })
             </td>

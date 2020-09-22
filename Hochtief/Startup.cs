@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Hochtief.Models;
 using Hochtief.Models.Repositories;
+using HomeProject.Models;
+using HomeProject.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,11 +28,10 @@ namespace Hochtief
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            //services.AddScoped<IRepostory<TestTabelle>, TestDBRepostory>();
             services.AddScoped<IRepostory<SourceCompany>, SourceCompanyDBRepostory>();
-           // services.AddScoped<IRepostory<Labour>, LabourDBRepostory>();
+           //services.AddScoped<IRepostory<Labour>, LabourDBRepostory>();
             services.AddScoped<IRepostory<SourceRole>, SourceRoleDBRepostory>();
-           // services.AddScoped<IRepostory<SourceStaff>, SourceStaffDBRepostory>();
+           //services.AddScoped<IRepostory<SourceStaff>, SourceStaffDBRepostory>();
             services.AddScoped<IRepostory<Weather>, WeatherDBRepostory>();
             services.AddScoped<IRepostory<SourceEquipment>, SourceEquipmentDBRepostory>(); 
             services.AddMvc(options => options.EnableEndpointRouting = false);

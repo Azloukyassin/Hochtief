@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Hochtief.Models;
+using Hochtief.Models.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Hochtief.Models.Repositories
+namespace HomeProject.Models.Repositories
 {
     public class SourceEquipmentDBRepostory :IRepostory<SourceEquipment>
     {
@@ -37,5 +39,6 @@ namespace Hochtief.Models.Repositories
             db.Update(newtabelle);
             db.SaveChanges();
         }
+    
     }
 }

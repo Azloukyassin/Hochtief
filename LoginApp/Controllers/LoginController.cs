@@ -5,8 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using LoginApp.Models;
-using Glimpse.Mvc.Tab;
-using EnvDTE;
+
 
 namespace UserReg.Controllers
 {
