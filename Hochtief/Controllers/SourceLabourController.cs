@@ -78,7 +78,7 @@ namespace BigApp.Controllers
         }
 
         // GET: Test/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Del ete(int id)
         {
             var ob = testRepostory.Find(id);
             return View(ob);
