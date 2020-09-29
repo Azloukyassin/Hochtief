@@ -4,47 +4,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
-.gridcontainer {
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 200px 1fr 100px;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-header {
-    background: tomato;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-article {
-    background: gold;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-aside {
-    background: lightgreen;
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-footer {
-    background: lightblue;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-test {
-    color:red;
-}
-body {
-    background-color:blue;
-}
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

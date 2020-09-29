@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    <style>
+        .auslogen{
+            margin-left:100px;
+            border:3px 2px dotted red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="~/Home">Hochtief-Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Weather/AddOrEdit">Weather</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="SourceRole/AddOrEdit">Source Role</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="SourceCompany/AddOrEdit">Source Company</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="SourceEquipment/AddOrEdit">Source Equipment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Labour/AddOrEdit">Source Labour</a>
+                </li>
+                <div class="auslogen">
+                    <li>@Html.ActionLink("Auslogen","Index","Home")</li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+    </div>
+</body>
+</html>

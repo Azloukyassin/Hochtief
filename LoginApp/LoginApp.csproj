@@ -158,14 +158,37 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\EntreController.cs" />
+    <Compile Include="Controllers\FirstLayoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LabourController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\SourceCompanyController.cs" />
+    <Compile Include="Controllers\SourceEquipmentController.cs" />
+    <Compile Include="Controllers\SourceRoleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Labourtest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -184,6 +207,18 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\UserTab.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Weathertest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SourceCompanyTest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SourceEquipmenttest.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SourceRolTest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -205,6 +240,26 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\bild.png" />
     <Content Include="js\scripts.js" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap.css" />
+    <Content Include="lib\twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\twitter-bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="lib\twitter-bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="lib\twitter-bootstrap\js\bootstrap.js" />
+    <Content Include="lib\twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model2.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -224,6 +279,104 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Model2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model2.edmx.diagram">
+      <DependentUpon>Model2.edmx</DependentUpon>
+    </Content>
+    <Content Include="libman.json" />
+    <Content Include="lib\twitter-bootstrap\scss\_alert.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_badge.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_button-group.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_buttons.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_card.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_carousel.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_close.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_code.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_custom-forms.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_dropdown.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_forms.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_functions.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_grid.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_images.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_input-group.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_jumbotron.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_list-group.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_media.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_mixins.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_modal.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_nav.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_navbar.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_pagination.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_popover.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_print.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_progress.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_reboot.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_root.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_spinners.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\bootstrap.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_tables.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_toasts.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_tooltip.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_transitions.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_type.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_utilities.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\_variables.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_float.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_image.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_size.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_align.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_background.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_display.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_float.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_interactions.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_overflow.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_position.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_shadows.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_stretched-link.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_text.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="lib\twitter-bootstrap\scss\vendor\_rfs.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -251,10 +404,15 @@
     <Content Include="Views\User\AddOrEdit.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Weather\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceRole\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceCompany\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceEquipment\AddOrEdit.cshtml" />
+    <Content Include="Views\Labour\AddOrEdit.cshtml" />
+    <Content Include="Views\FirstLayout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Entre\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -271,12 +429,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Hochtief\HomeProject.csproj">
-      <Project>{e2f31958-fc76-42c8-b34f-2f416f4fc1c8}</Project>
-      <Name>HomeProject</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

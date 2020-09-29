@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace LoginApp.Controllers
 {
-    public class EntreController : Controller
+    public class FirstLayoutController : Controller
     {
-        // GET: Entre
-        public IActionResult Index()
+        // GET: FirstLayout
+        public ActionResult Index()
         {
             return View();
         }
