@@ -4,14 +4,19 @@
     ViewBag.Title = "SourceEquipment";
 }
 
-<h2>AddOrEdit</h2>
+<style>
+    #itemText {
+        color:blue;
+    }
+</style>
+<h2>Dource-Equipment Daten Hinzufügen</h2>
 
 @using (Html.BeginForm("AddOrEdit", "SourceEquipment", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>SourceEquipmenttest</h4>
+        <h4 id="itemText">Hochtief-AG</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -55,7 +60,7 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <a asp-action="FirstLayout/Index" class="btn btn-info">Back</a>
+                <input value="Back" class="btn btn-info" onclick="location.href='@Url.Action("Index", "FirstLayout")'" />
                 <input type="submit" value="hinzufügen" class="btn btn-info" />
             </div>
         </div>

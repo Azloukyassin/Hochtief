@@ -2,44 +2,31 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>Hochtief-AG Mangement</title>
     
     <style>
         .auslogen{
             margin-left:100px;
             border:3px 2px dotted red;
         }
+        .li::before{
+            content: "** ";
+            color:blue; 
+        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="~/Home">Hochtief-Management</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="Weather/AddOrEdit">Weather</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="SourceRole/AddOrEdit">Source Role</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="SourceCompany/AddOrEdit">Source Company</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="SourceEquipment/AddOrEdit">Source Equipment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Labour/AddOrEdit">Source Labour</a>
-                </li>
-                //konnte noch besser sein #Yass
-                <div class="auslogen">
-                    <li>@Html.ActionLink("Auslogen","Index","Home")</li>
-                </div>
-            </ul>
-        </div>
+    <nav>
+        <il class="li">@Html.ActionLink("Weather", "AddOrEdit", "Weather")</il>
+        <br />
+        <il class="li">@Html.ActionLink("SourceCompany", "AddOrEdit", "SourceCompany")</il>
+        <br />
+        <il class="li">@Html.ActionLink("SourceRole", "AddOrEdit", "SourceRole")</il>
+        <br />
+        <il class="li">@Html.ActionLink("SourceEquipment", "AddOrEdit", "SourceEquipment")</il>
+        <br />
+        <il class="li">@Html.ActionLink("Labour", "AddOrEdit", "Labour")</il>
+        <br />
     </nav>
     <div class="container">
     </div>
