@@ -17,7 +17,7 @@ namespace LoginApp.Controllers
         [HttpPost]
         public ActionResult AddOrEdit(SourceCompanyTest userModel)
         {
-            using (MohamedAzloukSandboxEntities5 model = new MohamedAzloukSandboxEntities5())
+            using (MohamedAzloukSandboxTest model = new MohamedAzloukSandboxTest())
             {
                 model.SourceCompanyTest.Add(userModel);
                 model.SaveChanges();

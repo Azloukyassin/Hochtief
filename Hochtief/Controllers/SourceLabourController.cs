@@ -82,7 +82,7 @@ namespace BigApp.Controllers
         {
             var ob = testRepostory.Find(id);
             return View(ob);
-        }
+        }  
 
         // POST: Test/Delete/5
         [HttpPost]

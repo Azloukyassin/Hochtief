@@ -13,10 +13,10 @@ namespace LoginApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MohamedAzloukSandboxEntities6 : DbContext
+    public partial class MohamedAzloukSandboxEntities7 : DbContext
     {
-        public MohamedAzloukSandboxEntities6()
-            : base("name=MohamedAzloukSandboxEntities6")
+        public MohamedAzloukSandboxEntities7()
+            : base("name=MohamedAzloukSandboxEntities7")
         {
         }
     

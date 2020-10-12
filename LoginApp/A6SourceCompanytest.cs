@@ -13,15 +13,19 @@ namespace LoginApp
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class SourceRolTest
+    public partial class A6SourceCompanytest
     {
         [Required(ErrorMessage = "This Field is Required please")]
-        public int source_id { get; set; }
+        public int sourceCompany_id { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string En_Role { get; set; }
+        public string En_Company { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string De_Role { get; set; }
+        public string De_Firma { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string code { get; set; }
+        public string Code { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
+        public string Company_type { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
+        public string pds01 { get; set; }
     }
 }

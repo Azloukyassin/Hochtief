@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MohamedAzloukSandboxModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="A6Labourtest">
+          <Key>
+            <PropertyRef Name="labour_id" />
+          </Key>
+          <Property Name="labour_id" Type="int" Nullable="false" />
+          <Property Name="fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceCompanytest">
+          <Key>
+            <PropertyRef Name="sourceCompany_id" />
+          </Key>
+          <Property Name="sourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Firma" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Company_type" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="pds01" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceEquipmenttest">
+          <Key>
+            <PropertyRef Name="sourceEq_id" />
+          </Key>
+          <Property Name="sourceEq_id" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="codeCompany" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceRoletest">
+          <Key>
+            <PropertyRef Name="source_id" />
+          </Key>
+          <Property Name="source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="code" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MohamedAzloukSandboxModel2StoreContainer">
+          <EntitySet Name="A6Labourtest" EntityType="Self.A6Labourtest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A6SourceCompanytest" EntityType="Self.A6SourceCompanytest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A6SourceEquipmenttest" EntityType="Self.A6SourceEquipmenttest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A6SourceRoletest" EntityType="Self.A6SourceRoletest" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MohamedAzloukSandboxModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="A6Labourtest">
+          <Key>
+            <PropertyRef Name="labour_id" />
+          </Key>
+          <Property Name="labour_id" Type="Int32" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceCompanytest">
+          <Key>
+            <PropertyRef Name="sourceCompany_id" />
+          </Key>
+          <Property Name="sourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Firma" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company_type" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pds01" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceEquipmenttest">
+          <Key>
+            <PropertyRef Name="sourceEq_id" />
+          </Key>
+          <Property Name="sourceEq_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codeCompany" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A6SourceRoletest">
+          <Key>
+            <PropertyRef Name="source_id" />
+          </Key>
+          <Property Name="source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="code" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MohamedAzloukSandboxEntities6" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="A6Labourtest" EntityType="Self.A6Labourtest" />
+          <EntitySet Name="A6SourceCompanytest" EntityType="Self.A6SourceCompanytest" />
+          <EntitySet Name="A6SourceEquipmenttest" EntityType="Self.A6SourceEquipmenttest" />
+          <EntitySet Name="A6SourceRoletest" EntityType="Self.A6SourceRoletest" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MohamedAzloukSandboxModel2StoreContainer" CdmEntityContainer="MohamedAzloukSandboxEntities6">
+          <EntitySetMapping Name="A6Labourtest">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel2.A6Labourtest">
+              <MappingFragment StoreEntitySet="A6Labourtest">
+                <ScalarProperty Name="labour_id" ColumnName="labour_id" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A6SourceCompanytest">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel2.A6SourceCompanytest">
+              <MappingFragment StoreEntitySet="A6SourceCompanytest">
+                <ScalarProperty Name="sourceCompany_id" ColumnName="sourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Firma" ColumnName="De_Firma" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Company_type" ColumnName="Company_type" />
+                <ScalarProperty Name="pds01" ColumnName="pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A6SourceEquipmenttest">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel2.A6SourceEquipmenttest">
+              <MappingFragment StoreEntitySet="A6SourceEquipmenttest">
+                <ScalarProperty Name="sourceEq_id" ColumnName="sourceEq_id" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="codeCompany" ColumnName="codeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A6SourceRoletest">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel2.A6SourceRoletest">
+              <MappingFragment StoreEntitySet="A6SourceRoletest">
+                <ScalarProperty Name="source_id" ColumnName="source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

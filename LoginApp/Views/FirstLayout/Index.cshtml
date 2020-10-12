@@ -9,26 +9,43 @@
             margin-left:100px;
             border:3px 2px dotted red;
         }
-        .li::before{
-            content: "** ";
-            color:blue; 
+        .dataproject{
+            padding: 40px;
+            margin-left: 70px;
+            margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-item {
+            padding:5px; 
         }
     </style>
 </head>
 <body>
-    <nav>
-        <il class="li">@Html.ActionLink("Weather", "AddOrEdit", "Weather")</il>
-        <br />
-        <il class="li">@Html.ActionLink("SourceCompany", "AddOrEdit", "SourceCompany")</il>
-        <br />
-        <il class="li">@Html.ActionLink("SourceRole", "AddOrEdit", "SourceRole")</il>
-        <br />
-        <il class="li">@Html.ActionLink("SourceEquipment", "AddOrEdit", "SourceEquipment")</il>
-        <br />
-        <il class="li">@Html.ActionLink("Labour", "AddOrEdit", "Labour")</il>
-        <br />
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <ul class="navbar-nav">
+                <label class="nav-item">
+                    <a class="nav-link" href="~/Weather/AddOrEdit">Weather<span class="sr-only">(current)</span></a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceRole/AddOrEdit">Source-Role</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceEquipment/AddOrEdit">Source-Equipment</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceCompany/AddOrEdit">Source-Company</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/Labour/AddOrEdit">Labour</a>
+                </label>
+            </ul>
+        </div>
     </nav>
-    <div class="container">
-    </div>
 </body>
 </html>

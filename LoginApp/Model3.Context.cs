@@ -9,25 +9,24 @@
 
 namespace LoginApp
 {
+    using LoginApp.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class MohamedAzloukSandboxEntities6 : DbContext
+    public partial class MohamedAzloukSandboxTest : DbContext
     {
-        public MohamedAzloukSandboxEntities6()
-            : base("name=MohamedAzloukSandboxEntities6")
+        public MohamedAzloukSandboxTest()
+            : base("name=MohamedAzloukSandboxTest")
         {
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-    
-        public virtual DbSet<A6Labourtest> A6Labourtest { get; set; }
-        public virtual DbSet<A6SourceCompanytest> A6SourceCompanytest { get; set; }
-        public virtual DbSet<A6SourceEquipmenttest> A6SourceEquipmenttest { get; set; }
-        public virtual DbSet<A6SourceRoletest> A6SourceRoletest { get; set; }
+        public virtual DbSet<Labourtest> Labourtest { get; set; }
+        public virtual DbSet<SourceCompanyTest> SourceCompanyTest { get; set; }
+        public virtual DbSet<SourceEquipmenttest> SourceEquipmenttest { get; set; }
+        public virtual DbSet<SourceRolTest> SourceRolTest { get; set; }
+        public virtual DbSet<Weathertest> Weathertest { get; set; }
     }
 }

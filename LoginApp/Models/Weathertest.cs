@@ -12,16 +12,16 @@ namespace LoginApp.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
     public partial class Weathertest
     {
         [Required(ErrorMessage = "This Field is Required please")]
-        public int weather_id {get; set;}
+        public int weather_id { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        [DataType(DataType.Time)]
-        public string Temp_Time {get; set;}
+        public string Temp_Time { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string Temp {get; set;}
+        public string Temp { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
-        public string Temp_condition {get; set;}
+        public string Temp_condition { get; set; }
     }
 }

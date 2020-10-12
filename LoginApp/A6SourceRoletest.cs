@@ -13,7 +13,7 @@ namespace LoginApp
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class SourceRolTest
+    public partial class A6SourceRoletest
     {
         [Required(ErrorMessage = "This Field is Required please")]
         public int source_id { get; set; }

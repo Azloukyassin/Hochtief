@@ -1,4 +1,5 @@
 ﻿using LoginApp.Models;
+using LoginApp.Models.Repostories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace LoginApp.Controllers
     public class WeatherController : Controller
     {
         // GET: Weather
+       
         public ActionResult AddOrEdit(int id = 0)
         {
             Weathertest userModel = new Weathertest();

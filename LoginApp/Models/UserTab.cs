@@ -16,6 +16,7 @@ namespace LoginApp.Models
 
     public partial class UserTab
     {
+
         public int ID { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
         public string Username { get; set; }

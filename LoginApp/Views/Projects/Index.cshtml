@@ -1,4 +1,4 @@
-﻿
+﻿  
 @{
     ViewBag.Title = "Index";
 }
@@ -17,22 +17,31 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+   
 </head>
 <body id="page-top">
+  
     <style>
+
         .dataproject {
-            padding: 50px;
-            margin-left: 50px;
+            padding: 40px;
+            margin-left: 70px;
             margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .project {
             color: blueviolet;
         }
-        #about { 
-            padding:30px;
-            margin-left:60px; 
+
+        #about {
+            padding: 30px;
+            margin-left: 60px;
         }
     </style>
+
     <!-- Navigation-->
     <!-- Masthead-->
     <header class="masthead">
@@ -42,20 +51,17 @@
                 <h2 class="text-white-50 mx-auto mt-2 mb-5">App-Management Damit Besser zu gehen </h2>
             </div>
         </div>
-        <div class="dataproject">
-            <label class="project"> Project-Name : </label>
-            <input list="projects" name="project">
-            <datalist id="projects">
-                <option value="A40">
-                <option value="A6">
-                <option value="ICE">
-                <option value="MDB">
-                <option value="U3">
-            </datalist> 
-           <!--Musss nachschauen-->
-            <!-- Hier muss ein Bussniess also Logik implementiert werden Yass -->
-            <!-- Comm yass-->
-            <input type="button" value="Let's Go" onclick="location.href='@Url.Action("Index", "FirstLayout")'" />  
+        <script src="geschLogik.js"></script>
+        <input type='text' oninput='onInput()' id='input' list='dlist' />
+
+        <datalist id='dlist'>
+            <option value='Value1'>Text1</option>
+            <option value='Value2'>Text2</option>
+        </datalist>
+        <!--Musss nachschauen-->
+        <!-- Hier muss ein Bussniess also Logik implementiert werden Yass -->
+        <!-- Comm yass-->
+        <input type="button" value="Let's Go" onclick=" onInput()" />
         </div>
     </header>
     <!-- About-->
@@ -103,7 +109,6 @@
                 </div>
             </div>
             <!-- Project Two Row-->
-            
         </div>
     </section>
     <!-- Signup-->
