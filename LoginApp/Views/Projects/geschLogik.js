@@ -1,4 +1,4 @@
-﻿doFunction() 
+﻿function doFunction() 
 {
     var projects = document.getElementById("projects");
     if (projects.textContent == "A60") {
@@ -16,16 +16,12 @@
     else
         return "U3"; 
 } 
-
 // JavaScript-Code is not Done 
-
 function onInput() {
     var val = document.getElementById("input").value;
     var opts = document.getElementById('dlist').childNodes;
     for (var i = 0; i < opts.length; i++) {
         if (opts[i].value === val) {
-            // An item was selected from the list!
-            // yourCallbackHere()
             alert(opts[i].value);
             break;
         }

@@ -173,6 +173,11 @@
     <Compile Include="Controllers\FirstLayoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LabourController.cs" />
+    <Compile Include="Controllers\LayoutA40Controller.cs" />
+    <Compile Include="Controllers\LayoutA6Controller.cs" />
+    <Compile Include="Controllers\LayoutICEController.cs" />
+    <Compile Include="Controllers\LayoutMDBController.cs" />
+    <Compile Include="Controllers\LayoutU3Controller.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SourceCompanyController.cs" />
@@ -502,9 +507,14 @@
     <Content Include="Views\FirstLayout\Index.cshtml" />
     <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="Views\Weather\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutA6\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\LayoutA40\" />
+    <Folder Include="Views\LayoutICE\" />
+    <Folder Include="Views\LayoutMDB\" />
+    <Folder Include="Views\LayoutU3\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
