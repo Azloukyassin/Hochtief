@@ -17,16 +17,19 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
-<body id="page-top">  
+<body id="page-top">
     <style>
-         #input{
+        #bigDiv {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom:3px;
+            
         }
 
         #project {
             color: blueviolet;
+            padding-right : 5px;
         }
 
         #about {
@@ -44,30 +47,49 @@
             </div>
         </div>
         <!--Musss nachschauen-->
-        <!-- Fehler noch drin --> 
+        <!-- Fehler noch drin -->
         <script>
             function onInput() {
                 var val = document.getElementById("input").value;
                 var opts = document.getElementById('dlist').childNodes;
                 for (var i = 0; i < opts.length; i++) {
-                    if (opts[i].value === val) {
-                        window.location.href = "https://localhost:44313/LayoutA6/Index"
-                        break;
+                    if ((val === "A6-Project") && (opts[i].value === "A6-Project")) {
+                        window.location.href = "https://localhost:44313/LayoutA6/Index";
+                    }
+                    if ((val === "A40-Project") && (opts[i].value === "A40-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutA40/Index";
+                    }
+                    if ((val === "ICE-Project") && (opts[i].value === "ICE-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutICE/Index";
+                    }
+                    if ((val === "MBD-Project") && (opts[i].value === "MBD-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutMBD/Index";
+                    }
+                    if ((val === "U3-Project") && (opts[i].value === "U3-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutU3/Index";
                     }
                 }
             }
         </script>
+
+    </header>
+    <!-- About-->
+
+    <div id="bigDiv">
         <label id="project"> Auf Welche Projekt Wollen Sie arbeiten ? </label>
         <input type='text' oninput='onInput()' id='input' list='dlist' />
         <datalist id='dlist'>
-            <option value="A40-Projekt"></option>
+            <option value="A40-Project"></option>
             <option value="A6-Project"></option>
             <option value="ICE-Project"></option>
             <option value="MBD-Project"></option>
             <option value="U3-Project"></option>
         </datalist>
-    </header>
-    <!-- About-->
+    </div>
     <section class="about-section text-center" id="about">
         <div class="container">
             <div class="row">

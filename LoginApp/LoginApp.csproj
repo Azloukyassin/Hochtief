@@ -292,7 +292,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\ausloggen.png" />
     <Content Include="images\bild.png" />
+    <Content Include="images\einloggen.png" />
     <Content Include="js\scripts.js" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />
