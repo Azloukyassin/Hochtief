@@ -10,8 +10,21 @@ namespace LoginApp.Controllers
 {
     public class WeatherController : Controller
     {
-        // GET: Weather
+        
+        private readonly IRepostory<Weathertest> Repostory;
+        public WeatherController(IRepostory<Weathertest> repostory)
+        {
+            this.Repostory = repostory;
+        }
        
+        // GET:Weather
+        public ActionResult Index()
+        {
+            var test = Repostory.List(); ;
+            return View(test); 
+        }
+        // GET:Weather
+
         public ActionResult AddOrEdit(int id = 0)
         {
             Weathertest userModel = new Weathertest();
