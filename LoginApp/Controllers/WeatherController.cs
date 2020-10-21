@@ -1,5 +1,4 @@
 ﻿using LoginApp.Models;
-using LoginApp.Models.Repostories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +9,17 @@ namespace LoginApp.Controllers
 {
     public class WeatherController : Controller
     {
-        
-        private readonly IRepostory<Weathertest> Repostory;
-        public WeatherController(IRepostory<Weathertest> repostory)
+        MohamedAzloukSandboxEntities4 _db ; 
+        public WeatherController()
         {
-            this.Repostory = repostory;
+            _db = new MohamedAzloukSandboxEntities4(); 
         }
        
         // GET:Weather
+
         public ActionResult Index()
         {
-            var test = Repostory.List(); ;
+            var test = _db.Weathertest.ToList() ;
             return View(test); 
         }
         // GET:Weather
@@ -30,6 +29,7 @@ namespace LoginApp.Controllers
             Weathertest userModel = new Weathertest();
             return View(userModel);
         }
+
         [HttpPost]
         public ActionResult AddOrEdit(Weathertest userModel)
         {

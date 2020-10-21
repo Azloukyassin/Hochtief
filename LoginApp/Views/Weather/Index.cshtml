@@ -1,13 +1,10 @@
 ﻿@model IEnumerable<LoginApp.Models.Weathertest>
-
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Weather";
 }
-
-<h2>List</h2>
-
+    <h2>Alle Einträge</h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Neue Eintrag hinzufügen","AddOrEdit", "Weather")
 </p>
 <table class="table">
     <tr>
@@ -40,12 +37,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Temp_condition)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.weather_id}) |
-            @Html.ActionLink("Details", "Details", new {  id=item.weather_id  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.weather_id  })
-        </td>
+        
     </tr>
 }
-
 </table>
