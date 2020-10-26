@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp
+namespace LoginApp.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MohamedAzloukSandboxEntities6 : DbContext
+    public partial class MohamedAzloukSandboxEntities26 : DbContext
     {
-        public MohamedAzloukSandboxEntities6()
-            : base("name=MohamedAzloukSandboxEntities6")
+        public MohamedAzloukSandboxEntities26()
+            : base("name=MohamedAzloukSandboxEntities26")
         {
         }
     
@@ -25,9 +25,7 @@ namespace LoginApp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<A6Labourtest> A6Labourtest { get; set; }
-        public virtual DbSet<A6SourceCompanytest> A6SourceCompanytest { get; set; }
-        public virtual DbSet<A6SourceEquipmenttest> A6SourceEquipmenttest { get; set; }
-        public virtual DbSet<A6SourceRoletest> A6SourceRoletest { get; set; }
+        public virtual DbSet<UserTab> UserTab { get; set; }
+        public virtual DbSet<Weathertest> Weathertest { get; set; }
     }
 }

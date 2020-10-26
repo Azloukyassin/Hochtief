@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="126cc13dbfe94fafaf5be6a98e624d7a" Name="Diagram1">
-        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.Labourtest" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.SourceCompanyTest" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.SourceEquipmenttest" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.SourceRolTest" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="b6744c1e8fd14d858b8a4d2ec5a46ece" Name="Diagram1">
+        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.A6Labourtest" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.A6SourceCompanytest" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.A6SourceEquipmenttest" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MohamedAzloukSandboxModel1.A6SourceRoletest" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

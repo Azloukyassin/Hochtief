@@ -10,10 +10,10 @@ namespace LoginApp.Controllers
     public class WeatherController : Controller
     {
         // is Done 
-        MohamedAzloukSandboxEntities4 _db ; 
+        MohamedAzloukSandboxEntities26 _db ; 
         public WeatherController()
         {
-            _db = new MohamedAzloukSandboxEntities4(); 
+            _db = new MohamedAzloukSandboxEntities26(); 
         }
        
         // GET:Weather
@@ -34,7 +34,7 @@ namespace LoginApp.Controllers
         [HttpPost]
         public ActionResult AddOrEdit(Weathertest userModel)
         {
-            using (MohamedAzloukSandboxEntities4 model = new MohamedAzloukSandboxEntities4())
+            using (MohamedAzloukSandboxEntities26 model = new MohamedAzloukSandboxEntities26())
             {
                 model.Weathertest.Add(userModel);
                 model.SaveChanges();

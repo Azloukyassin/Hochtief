@@ -10,6 +10,23 @@ namespace LoginApp.Controllers
 {
     public class UserController : Controller
     {
+
+        MohamedAzloukSandboxEntities26 _db; 
+        public UserController()
+        {
+            _db = new MohamedAzloukSandboxEntities26(); 
+        }
+
+        public ActionResult List()
+        {
+            var test = _db.UserTab.ToList();
+            return View(test); 
+        }
+        // GET: User
+        public ActionResult Index()
+        {
+            return View();
+        }
         // GET: User
         public ActionResult AddOrEdit(int id=0)
         {
@@ -19,7 +36,7 @@ namespace LoginApp.Controllers
         [HttpPost]
         public ActionResult AddOrEdit(UserTab userModel)
         {
-            using (MohamedAzloukSandboxEntities4 model = new MohamedAzloukSandboxEntities4())
+            using (MohamedAzloukSandboxEntities26 model = new MohamedAzloukSandboxEntities26())
             {
                 model.UserTab.Add(userModel);
                 model.SaveChanges();

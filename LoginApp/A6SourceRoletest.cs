@@ -11,17 +11,12 @@ namespace LoginApp
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class A6SourceRoletest
     {
-        [Required(ErrorMessage = "This Field is Required please")]
         public int source_id { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
         public string En_Role { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
         public string De_Role { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
         public string code { get; set; }
     }
 }
