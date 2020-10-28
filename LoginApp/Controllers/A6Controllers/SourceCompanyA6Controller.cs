@@ -23,7 +23,7 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A6SourceCompanytest.ToList();
             return View(test);
         }
-
+          // Filter With Functionalty 
         [HttpGet]
 
         public async Task<ActionResult> Index(String searchString)
