@@ -24,5 +24,7 @@ namespace LoginApp.Models
         public string Temp { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
         public string Temp_condition { get; set; }
+
+        public string LoginErrorMessage { get; set; }
     }
 }

@@ -73,6 +73,12 @@
     <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.8.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.8\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
@@ -80,13 +86,16 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\stdole.16.7.30328.74\lib\net45\stdole.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -348,6 +357,8 @@
     <Content Include="images\ausloggen.png" />
     <Content Include="images\bild.png" />
     <Content Include="images\einloggen.png" />
+    <Content Include="images\undraw_male_avatar_323b.svg" />
+    <Content Include="images\undraw_Work_time_re_hdyv.svg" />
     <Content Include="js\scripts.js" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.css" />
     <Content Include="lib\twitter-bootstrap\css\bootstrap-grid.min.css" />
@@ -563,16 +574,20 @@
     <Content Include="Views\Weather\AddOrEdit.cshtml" />
     <Content Include="Views\LayoutA6\Index.cshtml" />
     <Content Include="Views\Weather\Index.cshtml" />
-    <Content Include="Views\SourceRoleA6\Index.cshtml" />
     <Content Include="Views\SourceRoleA6\AddOrEdit.cshtml" />
     <Content Include="Views\SourceEquipmentA6\Index.cshtml" />
     <Content Include="Views\SourceEquipmentA6\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceCompanyA6\Index.cshtml" />
     <Content Include="Views\SourceCompanyA6\AddOrEdit.cshtml" />
     <Content Include="Views\LabourA6\Index.cshtml" />
     <Content Include="Views\LabourA6\AddOrEdit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\LayoutA40\Index.cshtml" />
+    <Content Include="Views\LayoutICE\Index.cshtml" />
+    <Content Include="Views\LayoutMDB\Index.cshtml" />
+    <Content Include="Views\LayoutU3\Index.cshtml" />
+    <Content Include="Views\SourceRoleA6\Index.cshtml" />
+    <Content Include="Views\SourceCompanyA6\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -580,10 +595,6 @@
     <Folder Include="Views\LabourICE\" />
     <Folder Include="Views\LabourMDB\" />
     <Folder Include="Views\LabourU3\" />
-    <Folder Include="Views\LayoutA40\" />
-    <Folder Include="Views\LayoutICE\" />
-    <Folder Include="Views\LayoutMDB\" />
-    <Folder Include="Views\LayoutU3\" />
     <Folder Include="Views\SourceCompanyA40\" />
     <Folder Include="Views\SourceCompanyICE\" />
     <Folder Include="Views\SourceCompanyMDB\" />

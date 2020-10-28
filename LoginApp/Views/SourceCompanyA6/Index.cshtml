@@ -4,11 +4,20 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Alle Einträge</h2>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Neue Eintrag hinzufügen", "AddOrEdit", "SourceCompanyA6")
+    @Html.ActionLink("Neue Eintrag hinzufügen" ,"AddOrEdit" , "SourceCompanyA6")
 </p>
+
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Suchen..." value="@ViewData["Getdetais"]" name="searchString" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Info </a>
+    </p>
+
+</form>
 <table class="table">
     <tr>
         <th>
@@ -29,6 +38,7 @@
         <th>
             @Html.DisplayNameFor(model => model.pds01)
         </th>
+     
         <th></th>
     </tr>
 
@@ -52,6 +62,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.pds01)
         </td>
+       
     </tr>
 }
 

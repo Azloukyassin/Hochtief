@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace LoginApp.Controllers.A6Controllers
 {
@@ -21,7 +24,19 @@ namespace LoginApp.Controllers.A6Controllers
             return View(test);
         }
 
-        // GET: SourceCompanyA6
+        [HttpGet]
+
+        public async Task<ActionResult> Index(String searchString)
+        {
+            ViewData["GetDetails"] = searchString;
+            var modelquery = from x in _db.A6SourceCompanytest select x; 
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                modelquery = modelquery.Where(x => x.En_Company.Contains(searchString) || x.De_Firma.Contains(searchString) || x.Company_type.Contains(searchString) || x.Code.Contains(searchString) || x.pds01.Contains(searchString)); 
+            }
+            return View(await modelquery.AsNoTracking().ToListAsync());
+        }
+        // GET: SourceCompanyA6 
         public ActionResult AddOrEdit(int id = 0)
         {
             A6SourceCompanytest usermodel = new A6SourceCompanytest();
