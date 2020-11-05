@@ -1,0 +1,52 @@
+﻿@model IEnumerable<LoginApp.ICESourceCompany>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alle Einträge </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SourceCompany_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.En_Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.De_Frima)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pds01)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SourceCompany_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.En_Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.De_Frima)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pds01)
+        </td>
+    </tr>
+}
+
+</table>

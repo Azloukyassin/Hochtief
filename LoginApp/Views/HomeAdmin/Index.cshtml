@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "HomeAdmin";
+}
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Grayscale - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    
+</head>
+<body id="page-top">
+    <style>
+        #bigDiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3px;
+        }
+
+        #project {
+            color: black;
+            padding-right: 5px;
+            font-size:larger ;
+        }
+
+        #about {
+            padding: 30px;
+            margin-left: 60px;
+        }
+        #divAdmin {
+            margin-top :20px ; 
+            margin-bottom:20 px; 
+            margin-right:40px; 
+        }
+        .contact-section bg-black {
+            margin-top: 20px;
+            margin-bottom: 20 px;
+        }
+    </style>
+    <!-- Navigation-->
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Hochtief</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">App-Management Damit Besser zu gehen </h2>
+            </div>
+        </div>
+        <script>
+            function onInput() {
+                var val = document.getElementById("input").value;
+                var opts = document.getElementById('dlist').childNodes;
+                for (var i = 0; i < opts.length; i++) {
+                    if ((val === "A6-Project") && (opts[i].value === "A6-Project")) {
+                        window.location.href = "https://localhost:44313/A6LayoutAdmin/Index";
+                    }
+                    if ((val === "A40-Project") && (opts[i].value === "A40-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutA40/Index";
+                    }
+                    if ((val === "ICE-Project") && (opts[i].value === "ICE-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutICE/Index";
+                    }
+                    if ((val === "MBD-Project") && (opts[i].value === "MBD-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutMDB/Index";
+                    }
+                    if ((val === "U3-Project") && (opts[i].value === "U3-Project")) {
+                        //hier fehlt noch die Url Of Controller
+                        window.location.href = "https://localhost:44313/LayoutU3/Index";
+                    }
+                }
+            }
+        </script>
+
+    </header>
+    <!-- About-->
+
+    <div id="divAdmin">
+        <section class="about-section text-center" id="about">
+            <div id="bigDiv">
+                <label id="project"> Auf Welche Projekt Wollen Sie arbeiten ? </label>
+                <input type='text' oninput='onInput()' id='input' list='dlist' />
+                <datalist id='dlist'>
+                    <option value="A40-Project"></option>
+                    <option value="A6-Project"></option>
+                    <option value="ICE-Project"></option>
+                    <option value="MBD-Project"></option>
+                    <option value="U3-Project"></option>
+                </datalist>
+            </div>
+        </section>
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">Neue Benutzer Hinzufügen</h2>
+                        <p class="text-white-50">
+                            Um neuen Benutzer hinzufügen klicken Sie auf em Link
+                            <a href="~/User/List">Add</a>
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                        <form class="form-inline d-flex">
+                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
+                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"> Alfredstraße 236, 45133 Essen </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50"><a href="#!">hello@yourdomain.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">+49 201 824-1217</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/HOCHTIEF-Aktiengesellschaft-170434549675163"><i class="fab fa-facebook-f"></i></a>
+
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+</body>
+</html>
+
+

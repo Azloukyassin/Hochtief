@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoginApp.Controllers
+namespace LoginApp.Controllers.MDBControllers
 {
     public class LayoutMDBController : Controller
     {

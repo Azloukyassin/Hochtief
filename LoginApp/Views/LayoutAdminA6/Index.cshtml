@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> A6-Project Hochtief-AG Mangement</title>
+    <style>
+        .auslogen {
+            margin-left: 100px;
+            border: 3px 2px dotted red;
+        }
+
+        .dataproject {
+            padding: 40px;
+            margin-left: 70px;
+            margin-right: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-item {
+            padding: 5px;
+        }
+
+        #subTitel {
+            color: black;
+            font-size: x-large;
+            margin-bottom: 15px;
+            margin-left: 10px;
+        }
+        #bildausloggen {
+            float: right;
+        }
+    </style>
+</head>
+<header>
+    <p id="subTitel"> A6-Project -- ADMIN </p>
+</header>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <ul class="navbar-nav">
+                <label class="nav-item">
+                    <a class="nav-link" href="~/Weather/Index">Weather<span class="sr-only">(current)</span></a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceRoleA6/Index">Source-Role</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceEquipmentA6/Index">Source-Equipment</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/SourceCompanyA6/Index">Source-Company</a>
+                </label>
+                <label class="nav-item">
+                    <a class="nav-link" href="~/LabourA6/Index">Labour</a>
+                </label>
+                <label id="bildausloggen" class="nav-item">
+                    <a class="nav-link" href="~/Home/Index"><img src="~/images/ausloggen.png" height="30" width="30" /></a>
+                </label>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

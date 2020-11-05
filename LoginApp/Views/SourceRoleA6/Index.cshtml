@@ -7,7 +7,7 @@
 <h2>Alle Einträge </h2>
 
 <p>
-    @Html.ActionLink("Neue Eintrag hinzufügen", "AddOrEdit", "A6SourceRole")
+    @Html.ActionLink("Neue Eintrag hinzufügen", "AddOrEdit", "SourceRoleA6")
 </p>
 <form method="get" asp-action="Index">
     <p>
@@ -31,9 +31,7 @@
         <th>
             @Html.DisplayNameFor(model => model.code)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LoginErrorMessage)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -51,14 +49,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.code)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoginErrorMessage)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+        
+       
     </tr>
 }
 

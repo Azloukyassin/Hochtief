@@ -16,10 +16,12 @@
             margin: 0;
             box-sizing: border-box;
         }
+
         #button {
-            height:30;
-            width:30;
+            height: 30;
+            width: 30;
         }
+
         body {
             font-family: 'Poppins', sans-serif;
         }
@@ -35,14 +37,16 @@
         .container {
             width: 50;
             height: 50;
-            padding: 0 2rem; 
+            padding: 0 2rem;
         }
+
         .login-container {
             position: absolute;
             left: 18%;
             top: 10%;
             padding: 10px 10px
         }
+
         .img {
             display: flex;
             justify-content: flex-end;
@@ -89,46 +93,48 @@
             padding: 5px 0;
             border-bottom: 2px solid #d9d9d9;
         }
+
         .field-validation-error {
             color: red;
         }
-            .input-div:after, .input-div:before {
-                content: '';
-                position: absolute;
-                bottom: -2px;
-                width: 0%;
-                height: 2px;
-                background-color: #38d39f;
-            }
 
-            .input-div:after {
-                right: 50%;
-            }
+        .input-div:after, .input-div:before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            width: 0%;
+            height: 2px;
+            background-color: #38d39f;
+        }
 
-            .input-div:before {
-                left: 50%;
-            }
+        .input-div:after {
+            right: 50%;
+        }
 
-            .input-div.focus .i i {
-                color: #38d39f;
-            }
+        .input-div:before {
+            left: 50%;
+        }
 
-            .input-div.focus div h5 {
-                top: -5px;
-                font-size: 15px;
-            }
+        .input-div.focus .i i {
+            color: #38d39f;
+        }
 
-            .input-div.focus:after, .input-div.focus:before {
-                width: 50%;
-            }
+        .input-div.focus div h5 {
+            top: -5px;
+            font-size: 15px;
+        }
 
-            .input-div.one {
-                margin-top: 0;
-            }
+        .input-div.focus:after, .input-div.focus:before {
+            width: 50%;
+        }
 
-            .input-div.two {
-                margin-bottom: 4px;
-            }
+        .input-div.one {
+            margin-top: 0;
+        }
+
+        .input-div.two {
+            margin-bottom: 4px;
+        }
 
         .i {
             display: flex;
@@ -204,7 +210,6 @@
             .btn:hover {
                 background-position: right;
             }
-
     </style>
 
 
@@ -229,7 +234,7 @@
                         @Html.LabelFor(model => model.Username)
                         @Html.EditorFor(model => model.Username)
                     </div>
-                   <p>@Html.ValidationMessageFor(model => model.Username)</p>
+                    <p>@Html.ValidationMessageFor(model => model.Username)</p>
                 </div>
                 <div class="input-div two">
                     <div class="i">

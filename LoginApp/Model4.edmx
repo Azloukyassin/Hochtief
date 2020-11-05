@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MohamedAzloukSandboxModel5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="A40Labour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Frima" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pds01" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeCompany" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICELabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Frima" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pds01" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeCompany" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBLabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Frima" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pds01" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeCompany" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3Labour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Frima" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pds01" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeCompany" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MohamedAzloukSandboxModel5StoreContainer">
+          <EntitySet Name="A40Labour" EntityType="Self.A40Labour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A40SourceCompany" EntityType="Self.A40SourceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A40SourceEquipment" EntityType="Self.A40SourceEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="A40SourceRole" EntityType="Self.A40SourceRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICELabour" EntityType="Self.ICELabour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceCompany" EntityType="Self.ICESourceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceEquipment" EntityType="Self.ICESourceEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceRole" EntityType="Self.ICESourceRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MDBLabour" EntityType="Self.MDBLabour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MDBSourceCompany" EntityType="Self.MDBSourceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MDBSourceEquipment" EntityType="Self.MDBSourceEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MDBSourceRole" EntityType="Self.MDBSourceRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="U3Labour" EntityType="Self.U3Labour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="U3SourceCompany" EntityType="Self.U3SourceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="U3SourceEquipment" EntityType="Self.U3SourceEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="U3SourceRole" EntityType="Self.U3SourceRole" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MohamedAzloukSandboxModel5" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="A40Labour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Frima" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pds01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="A40SourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICELabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Frima" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pds01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBLabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Frima" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pds01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MDBSourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3Labour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Frima" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pds01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="U3SourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MohamedAzloukSandboxEntities8" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="A40Labour" EntityType="Self.A40Labour" />
+          <EntitySet Name="A40SourceCompany" EntityType="Self.A40SourceCompany" />
+          <EntitySet Name="A40SourceEquipment" EntityType="Self.A40SourceEquipment" />
+          <EntitySet Name="A40SourceRole" EntityType="Self.A40SourceRole" />
+          <EntitySet Name="ICELabour" EntityType="Self.ICELabour" />
+          <EntitySet Name="ICESourceCompany" EntityType="Self.ICESourceCompany" />
+          <EntitySet Name="ICESourceEquipment" EntityType="Self.ICESourceEquipment" />
+          <EntitySet Name="ICESourceRole" EntityType="Self.ICESourceRole" />
+          <EntitySet Name="MDBLabour" EntityType="Self.MDBLabour" />
+          <EntitySet Name="MDBSourceCompany" EntityType="Self.MDBSourceCompany" />
+          <EntitySet Name="MDBSourceEquipment" EntityType="Self.MDBSourceEquipment" />
+          <EntitySet Name="MDBSourceRole" EntityType="Self.MDBSourceRole" />
+          <EntitySet Name="U3Labour" EntityType="Self.U3Labour" />
+          <EntitySet Name="U3SourceCompany" EntityType="Self.U3SourceCompany" />
+          <EntitySet Name="U3SourceEquipment" EntityType="Self.U3SourceEquipment" />
+          <EntitySet Name="U3SourceRole" EntityType="Self.U3SourceRole" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MohamedAzloukSandboxModel5StoreContainer" CdmEntityContainer="MohamedAzloukSandboxEntities8">
+          <EntitySetMapping Name="A40Labour">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.A40Labour">
+              <MappingFragment StoreEntitySet="A40Labour">
+                <ScalarProperty Name="Labour_id" ColumnName="Labour_id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A40SourceCompany">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.A40SourceCompany">
+              <MappingFragment StoreEntitySet="A40SourceCompany">
+                <ScalarProperty Name="SourceCompany_id" ColumnName="SourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Frima" ColumnName="De_Frima" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Pds01" ColumnName="Pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A40SourceEquipment">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.A40SourceEquipment">
+              <MappingFragment StoreEntitySet="A40SourceEquipment">
+                <ScalarProperty Name="SourceEquipment" ColumnName="SourceEquipment" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeCompany" ColumnName="CodeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="A40SourceRole">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.A40SourceRole">
+              <MappingFragment StoreEntitySet="A40SourceRole">
+                <ScalarProperty Name="Source_id" ColumnName="Source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICELabour">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.ICELabour">
+              <MappingFragment StoreEntitySet="ICELabour">
+                <ScalarProperty Name="Labour_id" ColumnName="Labour_id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceCompany">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.ICESourceCompany">
+              <MappingFragment StoreEntitySet="ICESourceCompany">
+                <ScalarProperty Name="SourceCompany_id" ColumnName="SourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Frima" ColumnName="De_Frima" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Pds01" ColumnName="Pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceEquipment">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.ICESourceEquipment">
+              <MappingFragment StoreEntitySet="ICESourceEquipment">
+                <ScalarProperty Name="SourceEquipment" ColumnName="SourceEquipment" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeCompany" ColumnName="CodeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceRole">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.ICESourceRole">
+              <MappingFragment StoreEntitySet="ICESourceRole">
+                <ScalarProperty Name="Source_id" ColumnName="Source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MDBLabour">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.MDBLabour">
+              <MappingFragment StoreEntitySet="MDBLabour">
+                <ScalarProperty Name="Labour_id" ColumnName="Labour_id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MDBSourceCompany">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.MDBSourceCompany">
+              <MappingFragment StoreEntitySet="MDBSourceCompany">
+                <ScalarProperty Name="SourceCompany_id" ColumnName="SourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Frima" ColumnName="De_Frima" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Pds01" ColumnName="Pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MDBSourceEquipment">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.MDBSourceEquipment">
+              <MappingFragment StoreEntitySet="MDBSourceEquipment">
+                <ScalarProperty Name="SourceEquipment" ColumnName="SourceEquipment" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeCompany" ColumnName="CodeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MDBSourceRole">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.MDBSourceRole">
+              <MappingFragment StoreEntitySet="MDBSourceRole">
+                <ScalarProperty Name="Source_id" ColumnName="Source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="U3Labour">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.U3Labour">
+              <MappingFragment StoreEntitySet="U3Labour">
+                <ScalarProperty Name="Labour_id" ColumnName="Labour_id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="U3SourceCompany">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.U3SourceCompany">
+              <MappingFragment StoreEntitySet="U3SourceCompany">
+                <ScalarProperty Name="SourceCompany_id" ColumnName="SourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Frima" ColumnName="De_Frima" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Pds01" ColumnName="Pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="U3SourceEquipment">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.U3SourceEquipment">
+              <MappingFragment StoreEntitySet="U3SourceEquipment">
+                <ScalarProperty Name="SourceEquipment" ColumnName="SourceEquipment" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeCompany" ColumnName="CodeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="U3SourceRole">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel5.U3SourceRole">
+              <MappingFragment StoreEntitySet="U3SourceRole">
+                <ScalarProperty Name="Source_id" ColumnName="Source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
