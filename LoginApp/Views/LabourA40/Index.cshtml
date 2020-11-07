@@ -1,10 +1,10 @@
-﻿@model IEnumerable<LoginApp.A40Labour>
+﻿@model IEnumerable<LoginApp.Models.A40Labour>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Alle Einträge </h2>
+<h2> Alle Einträge </h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -64,7 +64,6 @@
         <td>
             @Html.DisplayFor(modelItem => item.Position)
         </td>
-       
     </tr>
 }
 

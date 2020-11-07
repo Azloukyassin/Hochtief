@@ -7,22 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp
+namespace LoginApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class A40SourceCompany
+    
+    public partial class ICESourceRole
     {
-        public int SourceCompany_id { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string En_Company { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string De_Frima { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
+        public int Source_id { get; set; }
+        public string En_Role { get; set; }
+        public string De_Role { get; set; }
         public string Code { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string Pds01 { get; set; }
     }
 }

@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp
+namespace LoginApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class MDBSourceRole
+    
+    public partial class MDBSourceEquipment
     {
-        public int Source_id { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string En_Role { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string De_Role { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
+        public int SourceEquipment { get; set; }
+        public string En_Equipment { get; set; }
+        public string De_Equipment { get; set; }
         public string Code { get; set; }
+        public string CodeCompany { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp
+namespace LoginApp.Models
 {
     using System;
     using System.Data.Entity;

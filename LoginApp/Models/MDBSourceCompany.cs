@@ -7,22 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoginApp
+namespace LoginApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class MDBSourceEquipment
+    
+    public partial class MDBSourceCompany
     {
-        public int SourceEquipment { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string En_Equipment { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string De_Equipment { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
+        public int SourceCompany_id { get; set; }
+        public string En_Company { get; set; }
+        public string De_Frima { get; set; }
         public string Code { get; set; }
-        [Required(ErrorMessage = "This Field is Required please")]
-        public string CodeCompany { get; set; }
+        public string Pds01 { get; set; }
     }
 }
