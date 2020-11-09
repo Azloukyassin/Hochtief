@@ -194,17 +194,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\A40Labour.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="A40Labour.cs">
+      <DependentUpon>A40Modell.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\A40SourceCompany.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="A40Modell.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>A40Modell.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\A40SourceEquipment.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="A40Modell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>A40Modell.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\A40SourceRole.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="A40Modell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>A40Modell.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="A40SourceCompany.cs">
+      <DependentUpon>A40Modell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="A40SourceEquipment.cs">
+      <DependentUpon>A40Modell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="A40SourceRole.cs">
+      <DependentUpon>A40Modell.tt</DependentUpon>
     </Compile>
     <Compile Include="A6Labourtest.cs">
       <DependentUpon>Model2.tt</DependentUpon>
@@ -228,12 +243,10 @@
     <Compile Include="Controllers\A40Controllers\SourceEquipmentA40Controller.cs" />
     <Compile Include="Controllers\A40Controllers\SourceRoleA40Controller.cs" />
     <Compile Include="Controllers\A6Controllers\LabourA6Controller.cs" />
+    <Compile Include="Controllers\A6Controllers\LayoutA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceCompanyA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceEquipmentA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceRoleA6Controller.cs" />
-    <Compile Include="Controllers\AdminsControllers\A6LabourAdminController.cs" />
-    <Compile Include="Controllers\AdminsControllers\HomeAdminController.cs" />
-    <Compile Include="Controllers\AdminsControllers\LayoutAdminA6Controller.cs" />
     <Compile Include="Controllers\FirstLayoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICEControllers\LabourICEController.cs" />
@@ -242,13 +255,12 @@
     <Compile Include="Controllers\ICEControllers\SourceEquipmentICEController.cs" />
     <Compile Include="Controllers\ICEControllers\SourceRoleICEController.cs" />
     <Compile Include="Controllers\LabourController.cs" />
-    <Compile Include="Controllers\A6Controllers\LayoutA6Controller.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\MDBControllers\LabourMDBController.cs" />
-    <Compile Include="Controllers\MDBControllers\LayoutMDBController.cs" />
-    <Compile Include="Controllers\MDBControllers\SourceCompanyMDBController.cs" />
-    <Compile Include="Controllers\MDBControllers\SourceEquipmentMDBController.cs" />
-    <Compile Include="Controllers\MDBControllers\SourceRoleMDBController.cs" />
+    <Compile Include="Controllers\MBDControllers\LabourMBDController.cs" />
+    <Compile Include="Controllers\MBDControllers\LayoutMBDController.cs" />
+    <Compile Include="Controllers\MBDControllers\SourceCompanyMBDController.cs" />
+    <Compile Include="Controllers\MBDControllers\SourceEquipmentMBDController.cs" />
+    <Compile Include="Controllers\MBDControllers\SoureRoleMBDController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\SourceCompanyController.cs" />
     <Compile Include="Controllers\SourceEquipmentController.cs" />
@@ -257,39 +269,68 @@
     <Compile Include="Controllers\U3Controllers\LayoutU3Controller.cs" />
     <Compile Include="Controllers\U3Controllers\SourceCompanyU3Controller.cs" />
     <Compile Include="Controllers\U3Controllers\SourceEquipmentU3Controller.cs" />
-    <Compile Include="Controllers\U3Controllers\SourceRoleU3Controller.cs" />
+    <Compile Include="Controllers\U3Controllers\SourceRleU3Controller.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\A6Controllers\WeatherController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ICELabour.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="ICELabour.cs">
+      <DependentUpon>ICEModell.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ICESourceCompany.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="ICEModell.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEModell.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ICESourceEquipment.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="ICEModell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEModell.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ICESourceRole.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="ICEModell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ICEModell.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ICESourceCompany.cs">
+      <DependentUpon>ICEModell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICESourceEquipment.cs">
+      <DependentUpon>ICEModell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ICESourceRole.cs">
+      <DependentUpon>ICEModell.tt</DependentUpon>
     </Compile>
     <Compile Include="Labourtest.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MDBLabour.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="MBDModell.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBDModell.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MDBSourceCompany.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="MBDModell.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBDModell.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\MDBSourceEquipment.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="MBDModell.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBDModell.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\MDBSourceRole.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="MDBLabour.cs">
+      <DependentUpon>MBDModell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDBSourceCompany.cs">
+      <DependentUpon>MBDModell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDBSourceEquipment.cs">
+      <DependentUpon>MBDModell.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MDBSourceRole.cs">
+      <DependentUpon>MBDModell.tt</DependentUpon>
     </Compile>
     <Compile Include="Model1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -326,36 +367,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model3.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model4.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model4.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="ModelA6Test.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelA6Test.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelA6Test.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelA6Test.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModelA6Test.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelA6Test.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ModelDaten.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,11 +382,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDaten.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Repostories\A6Repostories\AdminLabourRepostory.cs" />
-    <Compile Include="Models\Repostories\A6Repostories\AdminSourceCompanyRepostory.cs" />
-    <Compile Include="Models\Repostories\A6Repostories\AdminSourceEquipmentRepsotory.cs" />
-    <Compile Include="Models\Repostories\A6Repostories\AdminSourceRoleRepostory.cs" />
     <Compile Include="Models\Repostories\IRepostory.cs" />
+    <Compile Include="ModelUBahn.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUBahn.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelUBahn.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUBahn.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelUBahn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelUBahn.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SourceCompanyTest.cs">
       <DependentUpon>Model3.tt</DependentUpon>
@@ -392,20 +414,30 @@
     <Compile Include="Models\Weathertest.cs">
       <DependentUpon>ModelDaten.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\U3Labour.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="U3Labour.cs">
+      <DependentUpon>ModelUBahn.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\U3SourceCompany.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="U3SourceCompany.cs">
+      <DependentUpon>ModelUBahn.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\U3SourceEquipment.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="U3SourceEquipment.cs">
+      <DependentUpon>ModelUBahn.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\U3SourceRole.cs">
-      <DependentUpon>Model4.tt</DependentUpon>
+    <Compile Include="U3SourceRole.cs">
+      <DependentUpon>ModelUBahn.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="A40Modell.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>A40Modell.edmx</DependentUpon>
+      <LastGenOutput>A40Modell.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="A40Modell.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>A40Modell.edmx</DependentUpon>
+      <LastGenOutput>A40Modell.cs</LastGenOutput>
+    </Content>
     <Content Include="assets\img\bg-masthead.jpg" />
     <Content Include="assets\img\bg-signup.jpg" />
     <Content Include="assets\img\demo-image-01.jpg" />
@@ -421,6 +453,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ICEModell.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ICEModell.edmx</DependentUpon>
+      <LastGenOutput>ICEModell.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ICEModell.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ICEModell.edmx</DependentUpon>
+      <LastGenOutput>ICEModell.cs</LastGenOutput>
+    </Content>
     <Content Include="images\ausloggen.png" />
     <Content Include="images\bild.png" />
     <Content Include="images\einloggen.png" />
@@ -437,6 +479,16 @@
     <Content Include="lib\twitter-bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="lib\twitter-bootstrap\js\bootstrap.js" />
     <Content Include="lib\twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="MBDModell.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MBDModell.edmx</DependentUpon>
+      <LastGenOutput>MBDModell.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MBDModell.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MBDModell.edmx</DependentUpon>
+      <LastGenOutput>MBDModell.cs</LastGenOutput>
+    </Content>
     <Content Include="Model2.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model2.edmx</DependentUpon>
@@ -457,26 +509,6 @@
       <DependentUpon>Model3.edmx</DependentUpon>
       <LastGenOutput>Model3.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model4.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model4.edmx</DependentUpon>
-      <LastGenOutput>Model4.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model4.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model4.edmx</DependentUpon>
-      <LastGenOutput>Model4.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelA6Test.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelA6Test.edmx</DependentUpon>
-      <LastGenOutput>ModelA6Test.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModelA6Test.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelA6Test.edmx</DependentUpon>
-      <LastGenOutput>ModelA6Test.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\ModelDaten.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelDaten.edmx</DependentUpon>
@@ -486,6 +518,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelDaten.edmx</DependentUpon>
       <LastGenOutput>ModelDaten.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelUBahn.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelUBahn.edmx</DependentUpon>
+      <LastGenOutput>ModelUBahn.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelUBahn.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelUBahn.edmx</DependentUpon>
+      <LastGenOutput>ModelUBahn.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -587,13 +629,6 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="ModelA6Test.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelA6Test.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModelA6Test.edmx.diagram">
-      <DependentUpon>ModelA6Test.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Model3.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model3.Designer.cs</LastGenOutput>
@@ -615,12 +650,33 @@
     <Content Include="Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Model4.edmx">
+    <EntityDeploy Include="ModelUBahn.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model4.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelUBahn.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model4.edmx.diagram">
-      <DependentUpon>Model4.edmx</DependentUpon>
+    <Content Include="ModelUBahn.edmx.diagram">
+      <DependentUpon>ModelUBahn.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="ICEModell.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ICEModell.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ICEModell.edmx.diagram">
+      <DependentUpon>ICEModell.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="MBDModell.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MBDModell.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MBDModell.edmx.diagram">
+      <DependentUpon>MBDModell.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="A40Modell.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>A40Modell.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="A40Modell.edmx.diagram">
+      <DependentUpon>A40Modell.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -656,8 +712,6 @@
     <Content Include="Views\SourceEquipmentA6\Index.cshtml" />
     <Content Include="Views\SourceEquipmentA6\AddOrEdit.cshtml" />
     <Content Include="Views\SourceCompanyA6\AddOrEdit.cshtml" />
-    <Content Include="Views\LabourA6\Index.cshtml" />
-    <Content Include="Views\LabourA6\AddOrEdit.cshtml" />
     <Content Include="Views\SourceRoleA6\Index.cshtml" />
     <Content Include="Views\SourceCompanyA6\Index.cshtml" />
     <Content Include="Views\HomeAdmin\Index.cshtml" />
@@ -669,16 +723,16 @@
     <Content Include="Views\A6LabourAdmin\Delete.cshtml" />
     <Content Include="Views\LayoutAdminA6\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\LayoutA40\Index.cshtml" />
     <Content Include="Views\LayoutICE\Index.cshtml" />
-    <Content Include="Views\LayoutMDB\Index.cshtml" />
     <Content Include="Views\LayoutU3\Index.cshtml" />
-    <Content Include="Views\SourceCompanyA40\Index.cshtml" />
-    <Content Include="Views\SourceCompanyA40\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceEquipmentA40\Index.cshtml" />
-    <Content Include="Views\SourceEquipmentA40\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceRoleA40\Index.cshtml" />
-    <Content Include="Views\SourceRoleA40\AddOrEdit.cshtml" />
+    <Content Include="Views\LabourU3\Index.cshtml" />
+    <Content Include="Views\LabourU3\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceEquipmentU3\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentU3\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceRoleU3\Index.cshtml" />
+    <Content Include="Views\SourceRoleU3\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceCompanyU3\Index.cshtml" />
+    <Content Include="Views\SourceCompanyU3\AddOrEdit.cshtml" />
     <Content Include="Views\LabourICE\Index.cshtml" />
     <Content Include="Views\LabourICE\AddOrEdit.cshtml" />
     <Content Include="Views\SourceCompanyICE\Index.cshtml" />
@@ -687,24 +741,24 @@
     <Content Include="Views\SourceEquipmentICE\AddOrEdit.cshtml" />
     <Content Include="Views\SourceRoleICE\Index.cshtml" />
     <Content Include="Views\SourceRoleICE\AddOrEdit.cshtml" />
-    <Content Include="Views\LabourMDB\Index.cshtml" />
-    <Content Include="Views\LabourMDB\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceCompanyMDB\Index.cshtml" />
-    <Content Include="Views\SourceCompanyMDB\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceEquipmentMDB\Index.cshtml" />
-    <Content Include="Views\SourceEquipmentMDB\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceRoleMDB\Index.cshtml" />
-    <Content Include="Views\SourceRoleMDB\AddOrEdit.cshtml" />
-    <Content Include="Views\LabourU3\Index.cshtml" />
-    <Content Include="Views\LabourU3\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceCompanyU3\Index.cshtml" />
-    <Content Include="Views\SourceCompanyU3\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceEquipmentU3\Index.cshtml" />
-    <Content Include="Views\SourceEquipmentU3\AddOrEdit.cshtml" />
-    <Content Include="Views\SourceRoleU3\Index.cshtml" />
-    <Content Include="Views\SourceRoleU3\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutMBD\Index.cshtml" />
+    <Content Include="Views\LabourMBD\Index.cshtml" />
+    <Content Include="Views\LabourMBD\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceCompanyMBD\Index.cshtml" />
+    <Content Include="Views\SourceCompanyMBD\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceEquipmentMBD\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentMBD\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceRoleMBD\Index.cshtml" />
+    <Content Include="Views\SourceRoleMBD\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutA40\Index.cshtml" />
     <Content Include="Views\LabourA40\Index.cshtml" />
-    <Content Include="Views\LayoutA40\List.cshtml" />
+    <Content Include="Views\LabourA40\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceCompanyA40\Index.cshtml" />
+    <Content Include="Views\SourceCompanyA40\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceEquipmentA40\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentA40\AddOrEdit.cshtml" />
+    <Content Include="Views\SourceRoleA40\Index.cshtml" />
+    <Content Include="Views\SourceRoleA40\AddOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

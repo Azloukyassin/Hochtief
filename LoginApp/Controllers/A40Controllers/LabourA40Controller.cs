@@ -1,4 +1,4 @@
-﻿using LoginApp.Models;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,50 +7,49 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoginApp.Controllers.A40Controllers
+namespace LoginApp.Controllers.A6Controllers
 {
     public class LabourA40Controller : Controller
     {
         // GET: LabourA40
-        MohamedAzloukSandboxEntities8 _db; 
+        A40Entities _db;
         public LabourA40Controller()
         {
-            _db = new MohamedAzloukSandboxEntities8(); 
+            _db = new A40Entities();
         }
         // GET: LabourA40
         public ActionResult Index()
         {
             var test = _db.A40Labour.ToList();
-            return View(test); 
+            return View(test);
         }
 
         [HttpGet]
-        public async  Task<ActionResult> Index(String searchString)
+
+        public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
-            var modelquery = from x in _db.A40Labour select x; 
-            if(!String.IsNullOrEmpty(searchString))
+            var modelquery = from x in _db.A40Labour select x;
+            if (!String.IsNullOrEmpty(searchString))
             {
                 modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.Area.Contains(searchString));
             }
 
-            return View(await modelquery.AsNoTracking().ToListAsync()); 
+            return View(await modelquery.AsNoTracking().ToListAsync());
         }
 
-        // GET: LabourA40 
-        public ActionResult AddOrEdit(int id=0)
+        // GET: LabourA6
+        public ActionResult AddOrEdit(int id = 0)
         {
-            A40Labour a40Labour = new A40Labour();
-            return View(a40Labour); 
+            A40Labour usermodel = new A40Labour();
+            return View(usermodel);
         }
-
         [HttpPost]
-
-        public ActionResult AddOrEdit(A40Labour a40Labour)
+        public ActionResult AddOrEdit(A40Labour userModel)
         {
-            using (MohamedAzloukSandboxEntities8 model = new MohamedAzloukSandboxEntities8())
+            using (A40Entities model = new A40Entities())
             {
-                model.A40Labour.Add(a40Labour);
+                model.A40Labour.Add(userModel);
                 model.SaveChanges();
             }
             ModelState.Clear();

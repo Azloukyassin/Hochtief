@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc; 
+using System.Web.Mvc;
 
 
 namespace LoginApp.Controllers.A6Controllers
@@ -23,16 +23,16 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A6SourceCompanytest.ToList();
             return View(test);
         }
-          // Filter With Functionalty 
+        // Filter With Functionalty 
         [HttpGet]
 
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
-            var modelquery = from x in _db.A6SourceCompanytest select x; 
-            if(!String.IsNullOrEmpty(searchString))
+            var modelquery = from x in _db.A6SourceCompanytest select x;
+            if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.En_Company.Contains(searchString) || x.De_Firma.Contains(searchString) || x.Company_type.Contains(searchString) || x.Code.Contains(searchString) || x.pds01.Contains(searchString)); 
+                modelquery = modelquery.Where(x => x.En_Company.Contains(searchString) || x.De_Firma.Contains(searchString) || x.Company_type.Contains(searchString) || x.Code.Contains(searchString) || x.pds01.Contains(searchString));
             }
             return View(await modelquery.AsNoTracking().ToListAsync());
         }

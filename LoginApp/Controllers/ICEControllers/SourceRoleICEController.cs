@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,46 +7,49 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoginApp.Controllers.ICEControllers
+namespace LoginApp.Controllers.A6Controllers
 {
     public class SourceRoleICEController : Controller
     {
-        MohamedAzloukSandboxEntities8 _db; 
+
+        ICEEntities _db;
         public SourceRoleICEController()
         {
-            _db = new MohamedAzloukSandboxEntities8(); 
+            _db = new ICEEntities();
         }
         // GET: SourceRoleICE
         public ActionResult Index()
         {
-            var model = _db.ICESourceRole.ToList(); 
-            return View(model);
+            var test = _db.ICESourceRole.ToList();
+            return View(test);
         }
-        [HttpGet]
 
-        public async Task<ActionResult> Index(String searchString)
+        [HttpGet]
+        public async Task<ActionResult> Index(string searchString)
         {
-            ViewData["GetDetails"] = searchString;
+
+            ViewData["Getdetais"] = searchString;
             var modelquery = from x in _db.ICESourceRole select x;
             if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.En_Role.Contains(searchString) || x.De_Role.Contains(searchString)); 
+                modelquery = modelquery.Where(x => x.En_Role.Contains(searchString) || x.De_Role.Contains(searchString) || x.Code.Contains(searchString));
             }
 
             return View(await modelquery.AsNoTracking().ToListAsync());
+
         }
 
-        // GET: SourceRoleICE
+
+        // GET: SourceRoleICE   
         public ActionResult AddOrEdit(int id = 0)
         {
-            ICESourceRole model = new ICESourceRole();
-            return View(model);
+            ICESourceRole usermodel = new ICESourceRole();
+            return View(usermodel);
         }
-
         [HttpPost]
         public ActionResult AddOrEdit(ICESourceRole userModel)
         {
-            using (MohamedAzloukSandboxEntities8 model = new MohamedAzloukSandboxEntities8())
+            using (ICEEntities model = new ICEEntities())
             {
                 model.ICESourceRole.Add(userModel);
                 model.SaveChanges();

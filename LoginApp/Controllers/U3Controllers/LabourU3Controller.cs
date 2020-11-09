@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoginApp.Controllers.U3Controllers
+namespace LoginApp.Controllers.A6Controllers
 {
     public class LabourU3Controller : Controller
     {
         // GET: LabourU3
-        MohamedAzloukSandboxEntities8 _db;
+        MohamedAzloukSandboxEntities10 _db;
         public LabourU3Controller()
         {
-            _db = new MohamedAzloukSandboxEntities8();
+            _db = new MohamedAzloukSandboxEntities10();
         }
         // GET: LabourU3
         public ActionResult Index()
@@ -24,17 +24,19 @@ namespace LoginApp.Controllers.U3Controllers
         }
 
         [HttpGet]
+
         public async Task<ActionResult> Index(String searchString)
         {
-            ViewData["GetDetails"] = searchString;
+            ViewData["Getdetails"] = searchString;
             var modelquery = from x in _db.U3Labour select x;
             if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.Fullname.Contains(searchString) || x.Firstname.Contains(searchString) || x.Company.Contains(searchString) || x.Lastname.Contains(searchString) || x.Position.Contains(searchString));
+                modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.Area.Contains(searchString));
             }
 
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
+
         // GET: LabourU3
         public ActionResult AddOrEdit(int id = 0)
         {
@@ -44,7 +46,7 @@ namespace LoginApp.Controllers.U3Controllers
         [HttpPost]
         public ActionResult AddOrEdit(U3Labour userModel)
         {
-            using (MohamedAzloukSandboxEntities8 model = new MohamedAzloukSandboxEntities8())
+            using (MohamedAzloukSandboxEntities10 model = new MohamedAzloukSandboxEntities10())
             {
                 model.U3Labour.Add(userModel);
                 model.SaveChanges();

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MohamedAzloukSandboxModel3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ICELabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Firstname" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Lastname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Area" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Position" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="int" Nullable="false" />
+          <Property Name="En_Company" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="De_Frima" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pds01" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="int" Nullable="false" />
+          <Property Name="En_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Equipment" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodeCompany" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="int" Nullable="false" />
+          <Property Name="En_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MohamedAzloukSandboxModel3StoreContainer">
+          <EntitySet Name="ICELabour" EntityType="Self.ICELabour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceCompany" EntityType="Self.ICESourceCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceEquipment" EntityType="Self.ICESourceEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ICESourceRole" EntityType="Self.ICESourceRole" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MohamedAzloukSandboxModel3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ICELabour">
+          <Key>
+            <PropertyRef Name="Labour_id" />
+          </Key>
+          <Property Name="Labour_id" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Firstname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lastname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceCompany">
+          <Key>
+            <PropertyRef Name="SourceCompany_id" />
+          </Key>
+          <Property Name="SourceCompany_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Company" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Frima" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pds01" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceEquipment">
+          <Key>
+            <PropertyRef Name="SourceEquipment" />
+          </Key>
+          <Property Name="SourceEquipment" Type="Int32" Nullable="false" />
+          <Property Name="En_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Equipment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodeCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ICESourceRole">
+          <Key>
+            <PropertyRef Name="Source_id" />
+          </Key>
+          <Property Name="Source_id" Type="Int32" Nullable="false" />
+          <Property Name="En_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="De_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ICEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ICELabour" EntityType="Self.ICELabour" />
+          <EntitySet Name="ICESourceCompany" EntityType="Self.ICESourceCompany" />
+          <EntitySet Name="ICESourceEquipment" EntityType="Self.ICESourceEquipment" />
+          <EntitySet Name="ICESourceRole" EntityType="Self.ICESourceRole" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MohamedAzloukSandboxModel3StoreContainer" CdmEntityContainer="ICEEntities">
+          <EntitySetMapping Name="ICELabour">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel3.ICELabour">
+              <MappingFragment StoreEntitySet="ICELabour">
+                <ScalarProperty Name="Labour_id" ColumnName="Labour_id" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceCompany">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel3.ICESourceCompany">
+              <MappingFragment StoreEntitySet="ICESourceCompany">
+                <ScalarProperty Name="SourceCompany_id" ColumnName="SourceCompany_id" />
+                <ScalarProperty Name="En_Company" ColumnName="En_Company" />
+                <ScalarProperty Name="De_Frima" ColumnName="De_Frima" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Pds01" ColumnName="Pds01" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceEquipment">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel3.ICESourceEquipment">
+              <MappingFragment StoreEntitySet="ICESourceEquipment">
+                <ScalarProperty Name="SourceEquipment" ColumnName="SourceEquipment" />
+                <ScalarProperty Name="En_Equipment" ColumnName="En_Equipment" />
+                <ScalarProperty Name="De_Equipment" ColumnName="De_Equipment" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeCompany" ColumnName="CodeCompany" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ICESourceRole">
+            <EntityTypeMapping TypeName="MohamedAzloukSandboxModel3.ICESourceRole">
+              <MappingFragment StoreEntitySet="ICESourceRole">
+                <ScalarProperty Name="Source_id" ColumnName="Source_id" />
+                <ScalarProperty Name="En_Role" ColumnName="En_Role" />
+                <ScalarProperty Name="De_Role" ColumnName="De_Role" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Kein" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<LoginApp.U3SourceEquipment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List";
 }
 
-<h2>Alle Eintrage</h2>
-
+<h2> Alle Einträge </h2>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Neue Eintrag hinzufügen", "AddOrEdit", "SourceEquipmentU3")
 </p>
+
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Suchen..." value="@ViewData["Getdetais"]" name="searchString" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Info </a>
+    </p>
+
+</form>
 <table class="table">
     <tr>
         <th>
@@ -29,24 +37,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SourceEquipment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.En_Equipment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.De_Equipment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CodeCompany)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceEquipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.En_Equipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.De_Equipment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodeCompany)
+            </td>
+        </tr>
+    }
 
 </table>

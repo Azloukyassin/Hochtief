@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,54 +7,54 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LoginApp.Controllers.ICEControllers
+namespace LoginApp.Controllers.A6Controllers
 {
     public class LabourICEController : Controller
     {
-        MohamedAzloukSandboxEntities8 _db; 
-
+        // GET: LabourA6
+        ICEEntities _db; 
         public LabourICEController()
         {
-            _db = new MohamedAzloukSandboxEntities8(); 
+            _db = new ICEEntities();
         }
-        // Hier noch fehlt drin 
-        // GET: LabourICE
+        // GET: LabourA6
         public ActionResult Index()
         {
-            var model = _db.ICELabour.ToList(); 
-            return View(model);
+            var test = _db.ICELabour.ToList();
+            return View(test);
         }
+
         [HttpGet]
-        public async Task <ActionResult> Index(String searchString)
+
+        public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
-           var  modelquery = from x in _db.ICELabour select x; 
-            if(!String.IsNullOrEmpty(searchString))
+            var modelquery = from x in _db.ICELabour select x;
+            if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.Area.Contains(searchString) || x.Comment.Contains(searchString) || x.Company.Contains(searchString) || x.Firstname.Contains(searchString) || x.Fullname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Position.Contains(searchString)); 
+                modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.Area.Contains(searchString));
             }
 
-            return View(await modelquery.AsNoTracking().ToListAsync()); 
+            return View(await modelquery.AsNoTracking().ToListAsync());
         }
 
-        // GET: LabourICE 
-        public ActionResult AddOrEdit(int id=0)
+        // GET: LabourA6
+        public ActionResult AddOrEdit(int id = 0)
         {
-            ICELabour iCELabour = new ICELabour();
-            return View(iCELabour); 
+            ICELabour usermodel = new ICELabour();
+            return View(usermodel);
         }
-
         [HttpPost]
-        public ActionResult AddOrEdit(ICELabour iCELabour)
+        public ActionResult AddOrEdit(ICELabour userModel)
         {
-            using(MohamedAzloukSandboxEntities8 model = new MohamedAzloukSandboxEntities8())
+            using (ICEEntities model = new ICEEntities())
             {
-                model.ICELabour.Add(iCELabour);
+                model.ICELabour.Add(userModel);
                 model.SaveChanges();
             }
             ModelState.Clear();
-            ViewBag.SuccessMessage = "Registartion Successful";
-            return View("AddOrEdit", new ICELabour()); 
+            ViewBag.SuccessMessage = "Registration Successful ";
+            return View("AddOrEdit", new ICELabour());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -24,14 +25,14 @@ namespace LoginApp.Controllers.A6Controllers
         }
 
         [HttpGet]
-  
-         public async Task <ActionResult> Index(String searchString)
+
+        public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
-            var modelquery = from x in _db.A6Labourtest select x ; 
-            if(!String.IsNullOrEmpty(searchString))
+            var modelquery = from x in _db.A6Labourtest select x;
+            if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.area.Contains(searchString));     
+                modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.area.Contains(searchString));
             }
 
             return View(await modelquery.AsNoTracking().ToListAsync());

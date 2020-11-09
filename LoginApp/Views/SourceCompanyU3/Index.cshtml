@@ -1,14 +1,23 @@
 ﻿@model IEnumerable<LoginApp.U3SourceCompany>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List";
 }
 
-<h2>Alle Einträge</h2>
+<h2>Alle Einträge </h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Neue Eintrag hinzufügen", "AddOrEdit", "SourceCompanyU3")
 </p>
+
+<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Suchen..." value="@ViewData["Getdetais"]" name="searchString" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get All Info </a>
+    </p>
+
+</form>
 <table class="table">
     <tr>
         <th>
@@ -29,24 +38,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.SourceCompany_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.En_Company)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.De_Frima)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Code)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pds01)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SourceCompany_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.En_Company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.De_Frima)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pds01)
+            </td>
+
+        </tr>
+    }
 
 </table>

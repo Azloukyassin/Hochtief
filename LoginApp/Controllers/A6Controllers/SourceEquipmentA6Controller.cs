@@ -24,16 +24,16 @@ namespace LoginApp.Controllers.A6Controllers
         }
 
         [HttpGet]
-        public async Task <ActionResult> Index(String searchString)
+        public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
-            var modelquery = from x in _db.A6SourceEquipmenttest select x; 
-            if(!String.IsNullOrEmpty(searchString))
+            var modelquery = from x in _db.A6SourceEquipmenttest select x;
+            if (!String.IsNullOrEmpty(searchString))
             {
-                modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.codeCompany.Contains(searchString) || x.De_Equipment.Contains(searchString) || x.En_Equipment.Contains(searchString)); 
+                modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.codeCompany.Contains(searchString) || x.De_Equipment.Contains(searchString) || x.En_Equipment.Contains(searchString));
             }
 
-            return View(await modelquery.AsNoTracking().ToListAsync()); 
+            return View(await modelquery.AsNoTracking().ToListAsync());
         }
         // GET: SourceEquipmentA6
         public ActionResult AddOrEdit(int id = 0)

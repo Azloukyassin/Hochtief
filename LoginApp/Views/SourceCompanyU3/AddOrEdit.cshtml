@@ -4,9 +4,9 @@
     ViewBag.Title = "AddOrEdit";
 }
 
-<h2>AddOrEdit</h2>
+<h2> Eintrage Hinzufügen </h2>
 
-@using (Html.BeginForm("AddOrEdit", "SourceCompanyU3", FormMethod.Post)) 
+@using (Html.BeginForm("AddOrEdit", "SourceSourceU3", FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
@@ -61,7 +61,3 @@
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
