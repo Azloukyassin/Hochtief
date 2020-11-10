@@ -11,16 +11,26 @@ namespace LoginApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ICELabour
     {
         public int Labour_id { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Fullname { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Firstname { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Lastname { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Company { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Area { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Comment { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Position { get; set; }
+
+        public string LoginErrorMessage { get; set; }
     }
 }

@@ -30,5 +30,6 @@ namespace LoginApp
         public string Comment { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
         public string Position { get; set; }
+        public string LoginErrorMessage { get; set; }
     }
 }

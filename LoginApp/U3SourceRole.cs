@@ -22,5 +22,6 @@ namespace LoginApp
         public string De_Role { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
         public string Code { get; set; }
+        public string LoginErrorMessage { get; set; }
     }
 }

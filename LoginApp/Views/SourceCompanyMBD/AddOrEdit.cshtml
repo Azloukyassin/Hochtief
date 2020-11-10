@@ -6,12 +6,12 @@
 
 <h2>Eintrage Hinzufügen</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("AddOrEdit", "SourceCompanyMBD", FormMethod.Post)) 
 {
-    @Html.AntiForgeryToken("AddOrEdit", "SourceCompanyMBD", FormMethod.Post)
+    @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>MDBSourceCompany</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

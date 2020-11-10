@@ -1,0 +1,53 @@
+﻿@model IEnumerable<LoginApp.A6SourceRoletest>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Alle Einträge </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.source_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.En_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.De_Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.code)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.source_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.En_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.De_Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.code)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Update", "Update", new {  id=item.source_id }) |
+          
+            @Html.ActionLink("Delete", "Delete", new {  id=item.source_id  })
+        </td>
+    </tr>
+}
+
+</table>

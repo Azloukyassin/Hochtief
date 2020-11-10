@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - Grayscale v6.0.2 (https://startbootstrap.com/themes/grayscale)
 * Copyright 2013-2020 Start Bootstrap
@@ -5593,7 +5593,9 @@ a.close.disabled {
   border-radius: 0.3rem;
   outline: 0;
 }
-
+.container body-content {
+    background-color: cornflowerblue
+}
 .modal-backdrop {
   position: fixed;
   top: 0;

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LoginApp.A6SourceCompanytest>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alle Einträge </h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.sourceCompany_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.En_Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.De_Firma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Company_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pds01)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sourceCompany_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.En_Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.De_Firma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pds01)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Update", "Update", new {  id=item.sourceCompany_id  }) |
+       
+            @Html.ActionLink("Delete", "Delete", new { id=item.sourceCompany_id  })
+        </td>
+    </tr>
+}
+
+</table>

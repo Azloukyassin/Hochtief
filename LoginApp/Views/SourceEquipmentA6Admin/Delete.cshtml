@@ -1,0 +1,65 @@
+﻿@model LoginApp.A6SourceEquipmenttest
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.sourceEq_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sourceEq_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.En_Equipment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.En_Equipment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.De_Equipment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.De_Equipment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.codeCompany)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.codeCompany)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm("Delete" ,"SourceEquipment", FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -11,13 +11,20 @@ namespace LoginApp
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class A40SourceCompany
     {
         public int SourceCompany_id { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string En_Company { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string De_Frima { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Code { get; set; }
+        [Required(ErrorMessage = "This Field is Required please")]
         public string Pds01 { get; set; }
+
+        public string LoginErrorMessage { get; set; }
     }
 }

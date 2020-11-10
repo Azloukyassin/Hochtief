@@ -247,6 +247,12 @@
     <Compile Include="Controllers\A6Controllers\SourceCompanyA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceEquipmentA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceRoleA6Controller.cs" />
+    <Compile Include="Controllers\Admin\LabourA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\LayoutA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\LayoutAdminController.cs" />
+    <Compile Include="Controllers\Admin\SourceCompanyA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\SourceEquipmentA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\SourceRoleA6AdminController.cs" />
     <Compile Include="Controllers\FirstLayoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICEControllers\LabourICEController.cs" />
@@ -302,6 +308,7 @@
     <Compile Include="ICESourceRole.cs">
       <DependentUpon>ICEModell.tt</DependentUpon>
     </Compile>
+    <Compile Include="IWebHostEnvironment.cs" />
     <Compile Include="Labourtest.cs">
       <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
@@ -383,6 +390,7 @@
       <DependentUpon>ModelDaten.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Repostories\IRepostory.cs" />
+    <Compile Include="Models\Repostories\SourceCompanyA6.cs" />
     <Compile Include="ModelUBahn.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -414,6 +422,7 @@
     <Compile Include="Models\Weathertest.cs">
       <DependentUpon>ModelDaten.tt</DependentUpon>
     </Compile>
+    <Compile Include="startup.cs" />
     <Compile Include="U3Labour.cs">
       <DependentUpon>ModelUBahn.tt</DependentUpon>
     </Compile>
@@ -721,7 +730,6 @@
     <Content Include="Views\A6LabourAdmin\Create.cshtml" />
     <Content Include="Views\A6LabourAdmin\Edit.cshtml" />
     <Content Include="Views\A6LabourAdmin\Delete.cshtml" />
-    <Content Include="Views\LayoutAdminA6\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\LayoutICE\Index.cshtml" />
     <Content Include="Views\LayoutU3\Index.cshtml" />
@@ -759,9 +767,29 @@
     <Content Include="Views\SourceEquipmentA40\AddOrEdit.cshtml" />
     <Content Include="Views\SourceRoleA40\Index.cshtml" />
     <Content Include="Views\SourceRoleA40\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutAdmin\Index.cshtml" />
+    <Content Include="Views\LayoutAdmin\FirstPage.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutA6Admin\Index.cshtml" />
+    <Content Include="Views\SourceCompanyA6Admin\Index.cshtml" />
+    <Content Include="Views\SourceCompanyA6Admin\Update.cshtml" />
+    <Content Include="Views\SourceCompanyA6Admin\Delete.cshtml" />
+    <Content Include="Views\SourceEquipmentA6Admin\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentA6Admin\Update.cshtml" />
+    <Content Include="Views\SourceEquipmentA6Admin\Delete.cshtml" />
+    <Content Include="Views\LabourA6Admin\Index.cshtml" />
+    <Content Include="Views\LabourA6Admin\Update.cshtml" />
+    <Content Include="Views\LabourA6Admin\Delete.cshtml" />
+    <Content Include="Views\SourceRoleA6Admin\Index.cshtml" />
+    <Content Include="Views\SourceRoleA6Admin\Update.cshtml" />
+    <Content Include="Views\SourceRoleA6Admin\Delete.cshtml" />
+    <Content Include="Views\LabourA6\Index.cshtml" />
+    <Content Include="Views\LabourA6\AddOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Admin\A6Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

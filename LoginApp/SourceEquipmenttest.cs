@@ -25,5 +25,6 @@ namespace LoginApp
         public string code { get; set; }
         [Required(ErrorMessage = "This Field is Required please")]
         public string codeCompany { get; set; }
+        public string LoginErrorMessage { get; set; }
     }
 }
