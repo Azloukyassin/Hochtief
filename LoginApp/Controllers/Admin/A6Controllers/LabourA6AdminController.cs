@@ -22,6 +22,7 @@ namespace LoginApp.Controllers.Admin
             return View(test);
         }
         // GET: LabourA6Admin
+        // Fonctionality is't not Done ! 
         public ActionResult Update()
         {
             A6Labourtest model = new A6Labourtest();
