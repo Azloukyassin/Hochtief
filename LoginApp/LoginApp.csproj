@@ -247,12 +247,22 @@
     <Compile Include="Controllers\A6Controllers\SourceCompanyA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceEquipmentA6Controller.cs" />
     <Compile Include="Controllers\A6Controllers\SourceRoleA6Controller.cs" />
-    <Compile Include="Controllers\Admin\LabourA6AdminController.cs" />
-    <Compile Include="Controllers\Admin\LayoutA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\A40Controllers\LabourA40AdminController.cs" />
+    <Compile Include="Controllers\Admin\A40Controllers\LayoutA40AdminController.cs" />
+    <Compile Include="Controllers\Admin\A40Controllers\SourceCompanyA40AdminController.cs" />
+    <Compile Include="Controllers\Admin\A40Controllers\SourceEquipmentA40AdminController.cs" />
+    <Compile Include="Controllers\Admin\A40Controllers\SourceRoleA40AdminController.cs" />
+    <Compile Include="Controllers\Admin\A6Controllers\LabourA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\A6Controllers\LayoutA6AdminController.cs" />
     <Compile Include="Controllers\Admin\LayoutAdminController.cs" />
-    <Compile Include="Controllers\Admin\SourceCompanyA6AdminController.cs" />
-    <Compile Include="Controllers\Admin\SourceEquipmentA6AdminController.cs" />
-    <Compile Include="Controllers\Admin\SourceRoleA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\A6Controllers\SourceCompanyA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\A6Controllers\SourceEquipmentA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\A6Controllers\SourceRoleA6AdminController.cs" />
+    <Compile Include="Controllers\Admin\U3Controlllers\LabourU3AdminController.cs" />
+    <Compile Include="Controllers\Admin\U3Controlllers\LayoutU3AdminController.cs" />
+    <Compile Include="Controllers\Admin\U3Controlllers\SourceCompanyU3AdminController.cs" />
+    <Compile Include="Controllers\Admin\U3Controlllers\SourceEquipmentU3AdminController.cs" />
+    <Compile Include="Controllers\Admin\U3Controlllers\SourceRoleU3AdminController.cs" />
     <Compile Include="Controllers\FirstLayoutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ICEControllers\LabourICEController.cs" />
@@ -472,9 +482,13 @@
       <DependentUpon>ICEModell.edmx</DependentUpon>
       <LastGenOutput>ICEModell.cs</LastGenOutput>
     </Content>
+    <Content Include="images\administrator.png" />
+    <Content Include="images\anruf.png" />
     <Content Include="images\ausloggen.png" />
     <Content Include="images\bild.png" />
+    <Content Include="images\die-einstellungen.png" />
     <Content Include="images\einloggen.png" />
+    <Content Include="images\man-user.png" />
     <Content Include="images\undraw_male_avatar_323b.svg" />
     <Content Include="images\undraw_Work_time_re_hdyv.svg" />
     <Content Include="js\scripts.js" />
@@ -786,10 +800,35 @@
     <Content Include="Views\SourceRoleA6Admin\Delete.cshtml" />
     <Content Include="Views\LabourA6\Index.cshtml" />
     <Content Include="Views\LabourA6\AddOrEdit.cshtml" />
+    <Content Include="Views\LayoutU3Admin\Index.cshtml" />
+    <Content Include="Views\LayoutA40Admin\Index.cshtml" />
+    <Content Include="Views\LabourA40Admin\Index.cshtml" />
+    <Content Include="Views\LabourA40Admin\Update.cshtml" />
+    <Content Include="Views\LabourA40Admin\Delete.cshtml" />
+    <Content Include="Views\SourceCompanyA40Admin\Index.cshtml" />
+    <Content Include="Views\SourceCompanyA40Admin\Update.cshtml" />
+    <Content Include="Views\SourceCompanyA40Admin\Delete.cshtml" />
+    <Content Include="Views\SourceEquipmentA40Admin\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentA40Admin\Update.cshtml" />
+    <Content Include="Views\SourceEquipmentA40Admin\Delete.cshtml" />
+    <Content Include="Views\SourceRoleA40Admin\Index.cshtml" />
+    <Content Include="Views\SourceRoleA40Admin\Update.cshtml" />
+    <Content Include="Views\SourceRoleA40Admin\Delete.cshtml" />
+    <Content Include="Views\LabourU3Admin\Index.cshtml" />
+    <Content Include="Views\LabourU3Admin\Update.cshtml" />
+    <Content Include="Views\LabourU3Admin\Delete.cshtml" />
+    <Content Include="Views\SourceCompanyU3Admin\Index.cshtml" />
+    <Content Include="Views\SourceCompanyU3Admin\Update.cshtml" />
+    <Content Include="Views\SourceCompanyU3Admin\Delete.cshtml" />
+    <Content Include="Views\SourceEquipmentU3Admin\Index.cshtml" />
+    <Content Include="Views\SourceEquipmentU3Admin\Update.cshtml" />
+    <Content Include="Views\SourceEquipmentU3Admin\Delete.cshtml" />
+    <Content Include="Views\SourceRoleU3Admin\Index.cshtml" />
+    <Content Include="Views\SourceRoleU3Admin\Update.cshtml" />
+    <Content Include="Views\SourceRoleU3Admin\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Admin\A6Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

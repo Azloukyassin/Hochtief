@@ -1,0 +1,65 @@
+﻿@model LoginApp.U3SourceCompany
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SourceCompany_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SourceCompany_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.En_Company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.En_Company)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.De_Frima)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.De_Frima)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pds01)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pds01)
+        </dd>
+
+    
+    </dl>
+
+    @using (Html.BeginForm("Delete" , "SourceCompanyU3Admin" , FormMethod.Post)) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
