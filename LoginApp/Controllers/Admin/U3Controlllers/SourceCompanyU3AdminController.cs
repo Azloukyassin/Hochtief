@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +22,21 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
             var test = _db.U3SourceCompany.ToList();
             return View(test);
         }
+
+
+        [HttpGet]
+        public async Task<ActionResult> Index(String searchString)
+        {
+            ViewData["GetDetails"] = searchString;
+            var modelquery = from x in _db.U3SourceCompany select x; 
+            if(!String.IsNullOrWhiteSpace(searchString))
+            {
+                modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.De_Frima.Contains(searchString) || x.En_Company.Contains(searchString)|| x.Pds01.Contains(searchString)); 
+            }
+            return View(await modelquery.AsNoTracking().ToListAsync()); 
+        }
+
+
         // GET: SourceCompanyU3Admin
         public ActionResult Update()
         {

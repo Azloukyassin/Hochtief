@@ -9,69 +9,68 @@ using System.Web.Mvc;
 
 namespace LoginApp.Controllers.Admin
 {
-    public class SourceEquipmentU3AdminController : Controller
+    public class SourceEquipmentICEAdminController : Controller
     {
-        MohamedAzloukSandboxEntities10 _db;
+        ICEEntities _db;
 
-        public SourceEquipmentU3AdminController()
+        public SourceEquipmentICEAdminController()
         {
-            _db = new MohamedAzloukSandboxEntities10();
+            _db = new ICEEntities();
         }
-        // GET: SourceEquipmentU3Admin
+        // GET: SourceEquipmentICEAdmin
         public ActionResult Index()
         {
-            var test = _db.U3SourceEquipment.ToList();
+            var test = _db.ICESourceCompany.ToList();
             return View(test);
         }
 
-        [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
-            var modelquery = from x in _db.U3SourceEquipment select x; 
+            var modelquery = from x in _db.ICESourceEquipment select x; 
             if(!String.IsNullOrEmpty(searchString))
             {
                 modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.CodeCompany.Contains(searchString) || x.De_Equipment.Contains(searchString) || x.En_Equipment.Contains(searchString)); 
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
-        // GET: SourceEquipmentAdmin
+        // GET: SourceEquipmentICEAdmin
         public ActionResult Update()
         {
-            U3SourceEquipment model = new U3SourceEquipment();
+            ICESourceEquipment model = new ICESourceEquipment();
             return View(model);
         }
         [HttpPost]
-        public ActionResult Update(int id, U3SourceEquipment model)
+        public ActionResult Update(int id, ICESourceEquipment model)
         {
-            using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
+            using (ICEEntities entitiesA6 = new ICEEntities())
             {
                 if (model.SourceEquipment == id)
                 {
-                    entities.U3SourceEquipment.Add(model);
-                    entities.SaveChanges();
+                    entitiesA6.ICESourceEquipment.Add(model);
+                    entitiesA6.SaveChanges();
                 }
-                return View("Update", new U3SourceEquipment());
+                return View("Update", new ICESourceEquipment());
             }
         }
 
-        // GET: SourceEquipmentU3Admin
+        // GET: SourceEquipmentICEAdmin
         public ActionResult Delete()
         {
-            U3SourceEquipment model = new U3SourceEquipment();
+            ICESourceEquipment model = new ICESourceEquipment();
             return View(model);
         }
         [HttpPost]
-        public ActionResult Delete(int id, U3SourceEquipment model)
+        public ActionResult Delete(int id, ICESourceEquipment model)
         {
-            using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
+            using (ICEEntities entitiesA6 = new ICEEntities())
             {
                 if (model.SourceEquipment == id)
                 {
-                    entities.U3SourceEquipment.Remove(model);
-                    entities.SaveChanges();
+                    entitiesA6.ICESourceEquipment.Remove(model);
+                    entitiesA6.SaveChanges();
                 }
-                return View("Delete", new U3SourceEquipment());
+                return View("Delete", new ICESourceEquipment());
             }
         }
 

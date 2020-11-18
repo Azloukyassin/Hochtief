@@ -1,7 +1,9 @@
 ﻿using LoginApp.Models.Repostories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +22,18 @@ namespace LoginApp.Controllers.Admin
         {
             var test = _db.A6Labourtest.ToList();
             return View(test);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> Index(String searchString)
+        {
+            ViewData["GetDetails"] = searchString;
+            var modelquery = from x in _db.A6Labourtest select x; 
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                modelquery = modelquery.Where(x => x.fullname.Contains(searchString) || x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.area.Contains(searchString) || x.Comment.Contains(searchString) || x.Company.Contains(searchString)); 
+            }
+            return View(await modelquery.AsNoTracking().ToListAsync());
         }
         // GET: LabourA6Admin
         // Fonctionality is't not Done ! 

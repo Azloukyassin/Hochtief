@@ -1,7 +1,9 @@
 ﻿using LoginApp.Models.Repostories;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +22,19 @@ namespace LoginApp.Controllers.Admin
         {
             var test = _db.A40SourceEquipment.ToList();
             return View(test);
+        }
+
+        [HttpGet]
+
+        public async Task<ActionResult> Index(String searchString)
+        {
+            ViewData["GetDetails"] = searchString;
+            var modelquery = from x in _db.A40SourceEquipment select x; 
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.CodeCompany.Contains(searchString) || x.De_Equipment.Contains(searchString) || x.En_Equipment.Contains(searchString));
+            }
+            return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceEquipmentA40Admin
         public ActionResult Update()
