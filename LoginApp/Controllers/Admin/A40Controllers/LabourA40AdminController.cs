@@ -58,6 +58,7 @@ namespace LoginApp.Controllers.Admin
                 return View("Update", new A40Labour());
             }
         }
+        // Delete Methode nachschauen ! 
         // GET: LabourA40Admin
         public ActionResult Delete()
         {
