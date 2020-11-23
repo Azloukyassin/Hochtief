@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceCompanyA40AdminController : Controller
     {
         A40Entities _db;
-
         public SourceCompanyA40AdminController()
         {
             _db = new A40Entities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A40SourceCompany.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index (String searchString)
         {
@@ -36,7 +34,6 @@ namespace LoginApp.Controllers.Admin
 
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
-
         // GET: SourceCompanyA40Admin
         public ActionResult Update()
         {
@@ -48,15 +45,19 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entitiesA40 = new A40Entities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA40.A40SourceCompany.Add(model);
-                    entitiesA40.SaveChanges();
-                }
+                var neumodel = entitiesA40.A40SourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
+
+                neumodel.SourceCompany_id = model.SourceCompany_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Frima = model.De_Frima;
+                neumodel.Pds01 = model.Pds01;
+                neumodel.En_Company= model.En_Company;
+                
+                entitiesA40.SaveChanges();
+            
                 return View("Update", new A40SourceCompany());
             }
         }
-
         // GET: SourceCompanyA40Admin
         public ActionResult Delete()
         {
@@ -76,8 +77,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new A40SourceCompany());
             }
         }
-
-
-
     }
 }

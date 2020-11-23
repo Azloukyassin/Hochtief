@@ -45,11 +45,12 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
-                if (model.source_id == id)
-                {
-                    entitiesA6.A6SourceRoletest.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entitiesA6.A6SourceRoletest.Where(x => x.source_id == id).FirstOrDefault();
+
+                neumodel.source_id= model.source_id;
+                neumodel.code = model.code;
+                neumodel.De_Role = model.De_Role;
+                neumodel.En_Role = model.En_Role;
                 return View("Update", new A6SourceRoletest());
             }
         }

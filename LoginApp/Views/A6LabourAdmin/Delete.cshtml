@@ -78,13 +78,10 @@
         <dt>
             @Html.DisplayNameFor(model => model.LoginErrorMessage)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.LoginErrorMessage)
         </dd>
-
     </dl>
-
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 

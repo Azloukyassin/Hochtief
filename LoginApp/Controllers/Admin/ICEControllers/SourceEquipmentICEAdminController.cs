@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceEquipmentICEAdminController : Controller
     {
         ICEEntities _db;
-
         public SourceEquipmentICEAdminController()
         {
             _db = new ICEEntities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.ICESourceCompany.ToList();
             return View(test);
         }
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
@@ -43,17 +41,17 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Update(int id, ICESourceEquipment model)
         {
-            using (ICEEntities entitiesA6 = new ICEEntities())
+            using (ICEEntities entities = new ICEEntities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entitiesA6.ICESourceEquipment.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entities.ICESourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
+
+                neumodel.SourceEquipment = model.SourceEquipment;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
                 return View("Update", new ICESourceEquipment());
             }
         }
-
         // GET: SourceEquipmentICEAdmin
         public ActionResult Delete()
         {
@@ -73,8 +71,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new ICESourceEquipment());
             }
         }
-
-
-
     }
 }

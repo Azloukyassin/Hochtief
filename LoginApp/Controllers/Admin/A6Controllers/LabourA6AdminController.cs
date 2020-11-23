@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class LabourA6AdminController : Controller
     {
         MohamedAzloukSandboxEntitiesA6 _db;
-
         public LabourA6AdminController()
         {
             _db = new MohamedAzloukSandboxEntitiesA6();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A6Labourtest.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -47,15 +45,18 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
-                if (model.labour_id == id)
-                {
-                    entitiesA6.A6Labourtest.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entitiesA6.A6Labourtest.Where(x => x.labour_id == id).FirstOrDefault();
+
+                neumodel.Firstname = model.Firstname;
+                neumodel.Lastname = model.Lastname;
+                neumodel.fullname = model.fullname;
+                neumodel.labour_id = model.labour_id;
+                neumodel.Position = model.Position;
+                neumodel.Comment = model.Comment;
+                neumodel.Company = model.Company;
                 return View("Update", new A6Labourtest());
             }
         }
-
         // GET: LabourA6Admin
         public ActionResult Delete()
         {
@@ -75,8 +76,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new A6Labourtest());
             }
         }
-
-
-
     }
 }

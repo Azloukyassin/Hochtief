@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class LabourU3AdminController : Controller
     {
         MohamedAzloukSandboxEntities10 _db;
-
         public LabourU3AdminController()
         {
             _db = new MohamedAzloukSandboxEntities10();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.U3Labour.ToList();
             return View(test);
         }
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
@@ -34,7 +32,6 @@ namespace LoginApp.Controllers.Admin
             }
             return View(modelquery.AsNoTracking().ToListAsync()); 
         }
-
         // GET: LabourU3Admin
         public ActionResult Update()
         {
@@ -46,15 +43,20 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.U3Labour.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.U3Labour.Where(x => x.Labour_id == id).FirstOrDefault();
+
+                neumodel.Firstname = model.Firstname;
+                neumodel.Lastname = model.Lastname;
+                neumodel.Fullname = model.Fullname;
+                neumodel.Labour_id = model.Labour_id;
+                neumodel.Position = model.Position;
+                neumodel.Comment = model.Comment;
+                neumodel.Company = model.Company;
                 return View("Update", new U3Labour());
             }
+           
+            
         }
-
         // GET: LabourU3Admin
         public ActionResult Delete()
         {
@@ -74,8 +76,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new U3Labour());
             }
         }
-
-
-
     }
 }

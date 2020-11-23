@@ -9,13 +9,8 @@ namespace LoginApp.Models.Repostories
     public interface IRepostory<TEntity>
     {
         IList<TEntity> List();
-
         TEntity Find(int id);
-
         void Add(TEntity entity);
-
-     
-
         void Delete(int id);
     }
 }

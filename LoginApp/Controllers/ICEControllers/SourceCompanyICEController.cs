@@ -25,7 +25,6 @@ namespace LoginApp.Controllers.A6Controllers
         }
         // Filter With Functionalty 
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;

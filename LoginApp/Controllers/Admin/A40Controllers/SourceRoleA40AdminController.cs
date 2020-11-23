@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceRoleA40AdminController : Controller
     {
         A40Entities _db;
-
         public SourceRoleA40AdminController()
         {
             _db = new A40Entities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A40SourceRole.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -46,15 +44,16 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entitiesA40 = new A40Entities())
             {
-                if (model.Source_id == id)
-                {
-                    entitiesA40.A40SourceRole.Add(model);
-                    entitiesA40.SaveChanges();
-                }
+                var neumodel = entitiesA40.A40SourceRole.Where(x => x.Source_id == id).FirstOrDefault();
+
+                neumodel.Source_id = model.Source_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Role = model.De_Role;
+                neumodel.En_Role = model.En_Role;
+
                 return View("Update", new A40SourceRole());
             }
         }
-
         // GET: SourceRoleA40Admin
         public ActionResult Delete()
         {
@@ -74,8 +73,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new A40SourceRole());
             }
         }
-
-
-
     }
 }

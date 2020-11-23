@@ -22,9 +22,7 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.U3SourceCompany.ToList();
             return View(test);
         }
-
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
@@ -36,7 +34,6 @@ namespace LoginApp.Controllers.A6Controllers
 
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
-
         // GET: SourceCompanyU3
         public ActionResult AddOrEdit(int id = 0)
         {

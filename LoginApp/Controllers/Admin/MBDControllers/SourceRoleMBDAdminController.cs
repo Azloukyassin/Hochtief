@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceRoleMBDAdminController : Controller
     {
         MBDEntities _db;
-
         public SourceRoleMBDAdminController()
         {
             _db = new MBDEntities();
@@ -45,15 +44,15 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.Source_id == id)
-                {
-                    entities.MDBSourceRole.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.MDBSourceRole.Where(x => x.Source_id == id).FirstOrDefault();
+
+                neumodel.Source_id = model.Source_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Role = model.De_Role;
+                neumodel.En_Role = model.En_Role;
                 return View("Update", new MDBSourceRole());
             }
         }
-
         // GET: SourceRoleMBDAdmin
         public ActionResult Delete()
         {
@@ -73,8 +72,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new MDBSourceRole());
             }
         }
-
-
-
     }
 }

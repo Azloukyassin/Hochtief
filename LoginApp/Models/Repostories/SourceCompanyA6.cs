@@ -32,6 +32,5 @@ namespace LoginApp.Models.Repostories
         {
             return db.A6SourceCompanytest.ToList();
         }
-        
     }
 }

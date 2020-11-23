@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace LoginApp.Controllers.Admin.U3Controlllers
 {
     public class SourceCompanyU3AdminController : Controller
     {
         MohamedAzloukSandboxEntities10 _db;
-
         public SourceCompanyU3AdminController()
         {
             _db = new MohamedAzloukSandboxEntities10();
@@ -22,8 +22,6 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
             var test = _db.U3SourceCompany.ToList();
             return View(test);
         }
-
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -35,8 +33,6 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
-
-
         // GET: SourceCompanyU3Admin
         public ActionResult Update()
         {
@@ -46,18 +42,19 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
         [HttpPost]
         public ActionResult Update(int id, U3SourceCompany model)
         {
-            using (MohamedAzloukSandboxEntities10 entitiesA6 = new MohamedAzloukSandboxEntities10())
+            using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.U3SourceCompany.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entities.U3SourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
+
+                neumodel.SourceCompany_id = model.SourceCompany_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Frima = model.De_Frima;
+                neumodel.Pds01 = model.Pds01;
+                neumodel.En_Company = model.En_Company;
                 return View("Update", new U3SourceCompany());
             }
         }
         // GET: SourceCompanyU3Admin
-
         public ActionResult Delete()
         {
             U3SourceCompany model = new U3SourceCompany();

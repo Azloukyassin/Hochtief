@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-
 namespace LoginApp.Controllers.Admin
 {
     public class LabourA40AdminController : Controller
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A40Labour.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task <ActionResult> Index(String searchString)
         {
@@ -33,7 +31,6 @@ namespace LoginApp.Controllers.Admin
             {
                 modelquery = modelquery.Where(x => x.Fullname.Contains(searchString) || x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Area.Contains(searchString) || x.Comment.Contains(searchString) || x.Company.Contains(searchString) || x.Position.Contains(searchString)); 
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: LabourA40Admin
@@ -45,13 +42,19 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Update(int id, A40Labour model)
         {
-            using (A40Entities entitiesA6 = new A40Entities())
+            using (A40Entities entities = new A40Entities())
             {
-                if (model.Labour_id == id)
-                {
-                    entitiesA6.A40Labour.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entities.A40Labour.Where(x => x.Labour_id == id).FirstOrDefault();
+
+                neumodel.Firstname = model.Firstname;
+                neumodel.Lastname = model.Lastname;
+                neumodel.Fullname = model.Fullname;
+                neumodel.Labour_id = model.Labour_id;
+                neumodel.Position = model.Position;
+                neumodel.Comment = model.Comment;
+                neumodel.Company = model.Company;
+                entities.SaveChanges();
+                
                 return View("Update", new A40Labour());
             }
         }
@@ -74,8 +77,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new A40Labour());
             }
         }
-
-
-
     }
 }

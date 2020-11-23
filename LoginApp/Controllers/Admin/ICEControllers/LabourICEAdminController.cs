@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class LabourICEAdminController : Controller
     {
         ICEEntities _db;
-
         public LabourICEAdminController()
         {
             _db = new ICEEntities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.ICELabour.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -46,15 +44,18 @@ namespace LoginApp.Controllers.Admin
         {
             using (ICEEntities entities = new ICEEntities())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.ICELabour.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.ICELabour.Where(x => x.Labour_id == id).FirstOrDefault();
+
+                neumodel.Firstname = model.Firstname;
+                neumodel.Lastname = model.Lastname;
+                neumodel.Fullname = model.Fullname;
+                neumodel.Labour_id = model.Labour_id;
+                neumodel.Position = model.Position;
+                neumodel.Comment = model.Comment;
+                neumodel.Company = model.Company;
                 return View("Update", new ICELabour());
             }
         }
-
         // GET: LabourICEAdmin
         public ActionResult Delete()
         {
@@ -74,8 +75,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new ICELabour());
             }
         }
-
-
-
     }
 }

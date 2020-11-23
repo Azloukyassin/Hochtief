@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceCompanyICEAdminController : Controller
     {
         ICEEntities _db;
-
         public SourceCompanyICEAdminController()
         {
             _db = new ICEEntities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.ICESourceCompany.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -35,7 +33,6 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
-
         // GET: SourceCompanyICEAdmin
         public ActionResult Update()
         {
@@ -45,17 +42,18 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Update(int id, ICESourceCompany model)
         {
-            using (ICEEntities entitiesA6 = new ICEEntities())
+            using (ICEEntities entities = new ICEEntities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.ICESourceCompany.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entities.ICESourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
+
+                neumodel.SourceCompany_id = model.SourceCompany_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Frima = model.De_Frima;
+                neumodel.Pds01 = model.Pds01;
+                neumodel.En_Company = model.En_Company;
                 return View("Update", new ICESourceCompany());
             }
         }
-
         // GET: SourceCompanyICEAdmin
         public ActionResult Delete()
         {
@@ -75,8 +73,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new ICESourceCompany());
             }
         }
-
-
-
     }
 }

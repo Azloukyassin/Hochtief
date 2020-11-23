@@ -16,7 +16,6 @@ namespace UserReg.Controllers
         {
             return View();
         }
-        // muss nachschauen 
         [HttpPost]
         public ActionResult Autherize(UserTab userModel)
         {

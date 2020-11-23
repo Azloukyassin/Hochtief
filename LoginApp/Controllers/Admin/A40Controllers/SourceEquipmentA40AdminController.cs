@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceEquipmentA40AdminController : Controller
     {
         A40Entities _db;
-
         public SourceEquipmentA40AdminController()
         {
             _db = new A40Entities();
@@ -23,9 +22,7 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A40SourceEquipment.ToList();
             return View(test);
         }
-
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;
@@ -55,7 +52,6 @@ namespace LoginApp.Controllers.Admin
                 return View("Update", new A40SourceEquipment());
             }
         }
-
         // GET: SourceEquipmentA40Admin
         public ActionResult Delete()
         {
@@ -67,11 +63,14 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entitiesA40 = new A40Entities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entitiesA40.A40SourceEquipment.Remove(model);
-                    entitiesA40.SaveChanges();
-                }
+                var neumodel = entitiesA40.A40SourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
+
+                neumodel.SourceEquipment=model.SourceEquipment;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
+                
+            }
                 return View("Delete", new A40SourceEquipment());
             }
         }
@@ -79,4 +78,4 @@ namespace LoginApp.Controllers.Admin
 
 
     }
-}
+

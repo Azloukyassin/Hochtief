@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class LabourMBDAdminController : Controller
     {
         MBDEntities _db;
-
         public LabourMBDAdminController()
         {
             _db = new MBDEntities();
@@ -46,15 +45,18 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.MDBLabour.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.MDBLabour.Where(x => x.Labour_id == id).FirstOrDefault();
+
+                neumodel.Firstname = model.Firstname;
+                neumodel.Lastname = model.Lastname;
+                neumodel.Fullname = model.Fullname;
+                neumodel.Labour_id = model.Labour_id;
+                neumodel.Position = model.Position;
+                neumodel.Comment = model.Comment;
+                neumodel.Company = model.Company;
                 return View("Update", new MDBLabour());
             }
         }
-
         // GET: LabourMBDAdmin
         public ActionResult Delete()
         {

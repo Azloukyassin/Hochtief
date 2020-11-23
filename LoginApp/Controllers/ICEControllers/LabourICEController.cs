@@ -23,9 +23,7 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.ICELabour.ToList();
             return View(test);
         }
-
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
@@ -34,10 +32,8 @@ namespace LoginApp.Controllers.A6Controllers
             {
                 modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.Area.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
-
         // GET: LabourA6
         public ActionResult AddOrEdit(int id = 0)
         {

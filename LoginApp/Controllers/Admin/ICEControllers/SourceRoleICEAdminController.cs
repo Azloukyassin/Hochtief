@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceRoleICEAdminController : Controller
     {
         ICEEntities _db;
-
         public SourceRoleICEAdminController()
         {
             _db = new ICEEntities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.ICESourceRole.ToList();
             return View(test);
         }
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
@@ -46,15 +44,15 @@ namespace LoginApp.Controllers.Admin
         {
             using (ICEEntities entities = new ICEEntities())
             {
-                if (model.Source_id == id)
-                {
-                    entities.ICESourceRole.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.ICESourceRole.Where(x => x.Source_id == id).FirstOrDefault();
+
+                neumodel.Source_id = model.Source_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Role = model.De_Role;
+                neumodel.En_Role = model.En_Role;
                 return View("Update", new ICESourceRole());
             }
         }
-
         // GET: SourceRoleICEAdmin
         public ActionResult Delete()
         {
@@ -74,8 +72,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new ICESourceRole());
             }
         }
-
-
-
     }
 }

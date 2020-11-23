@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceEquipmentA6AdminController : Controller
     {
         MohamedAzloukSandboxEntitiesA6 _db;
-
         public SourceEquipmentA6AdminController()
         {
             _db = new MohamedAzloukSandboxEntitiesA6();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.A6SourceEquipmenttest.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -46,15 +44,15 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
-                if (model.sourceEq_id == id)
-                {
-                    entitiesA6.A6SourceEquipmenttest.Add(model);
-                    entitiesA6.SaveChanges();
-                }
+                var neumodel = entitiesA6.A6SourceEquipmenttest.Where(x => x.sourceEq_id == id).FirstOrDefault();
+
+                neumodel.sourceEq_id = model.sourceEq_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
                 return View("Update", new A6SourceEquipmenttest());
             }
         }
-
         // GET: SourceEquipmentA6Admin
         public ActionResult Delete()
         {
@@ -74,8 +72,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new A6SourceEquipmenttest());
             }
         }
-
-
-
     }
 }

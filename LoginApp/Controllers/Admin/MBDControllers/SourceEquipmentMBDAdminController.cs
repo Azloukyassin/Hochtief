@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceEquipmentMBDAdminController : Controller
     {
         MBDEntities _db;
-
         public SourceEquipmentMBDAdminController()
         {
             _db = new MBDEntities();
@@ -46,15 +45,15 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entities.MDBSourceEquipment.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.MDBSourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
+
+                neumodel.SourceEquipment = model.SourceEquipment;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
                 return View("Update", new MDBSourceEquipment());
             }
         }
-
         // GET: SourceEquipmentMBDAdmin
         public ActionResult Delete()
         {
@@ -74,8 +73,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new MDBSourceEquipment());
             }
         }
-
-
-
     }
 }

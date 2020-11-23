@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceRoleU3AdminController : Controller
     {
         MohamedAzloukSandboxEntities10 _db;
-
         public SourceRoleU3AdminController()
         {
             _db = new MohamedAzloukSandboxEntities10();
@@ -33,7 +32,6 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
-
         // GET: SourceRoleU3Admin
         public ActionResult Update()
         {
@@ -45,15 +43,15 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.Source_id == id)
-                {
-                    entities.U3SourceRole.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.U3SourceRole.Where(x => x.Source_id == id).FirstOrDefault();
+
+                neumodel.Source_id = model.Source_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Role = model.De_Role;
+                neumodel.En_Role = model.En_Role;
                 return View("Update", new U3SourceRole());
             }
         }
-
         // GET: SourceRoleU3Admin
         public ActionResult Delete()
         {
@@ -73,8 +71,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new U3SourceRole());
             }
         }
-
-
-
     }
 }

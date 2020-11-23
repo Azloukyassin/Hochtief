@@ -10,13 +10,11 @@ namespace LoginApp.Controllers
 {
     public class UserController : Controller
     {
-
         MohamedAzloukSandboxEntities26 _db; 
         public UserController()
         {
             _db = new MohamedAzloukSandboxEntities26(); 
         }
-
         public ActionResult List()
         {
             var test = _db.UserTab.ToList();

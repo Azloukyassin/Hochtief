@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceCompanyMBDAdminController : Controller
     {
         MBDEntities _db;
-
         public SourceCompanyMBDAdminController()
         {
             _db = new MBDEntities();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.MDBSourceCompany.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String seachString)
         {
@@ -46,15 +44,16 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entities.MDBSourceCompany.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.MDBSourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
+
+                neumodel.SourceCompany_id = model.SourceCompany_id;
+                neumodel.Code = model.Code;
+                neumodel.De_Frima = model.De_Frima;
+                neumodel.Pds01 = model.Pds01;
+                neumodel.En_Company = model.En_Company;
                 return View("Update", new MDBSourceCompany());
             }
         }
-
         // GET: SourceCompanyMBDAdmin
         public ActionResult Delete()
         {
@@ -74,8 +73,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new MDBSourceCompany());
             }
         }
-
-
-
     }
 }

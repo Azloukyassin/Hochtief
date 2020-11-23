@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceEquipmentU3AdminController : Controller
     {
         MohamedAzloukSandboxEntities10 _db;
-
         public SourceEquipmentU3AdminController()
         {
             _db = new MohamedAzloukSandboxEntities10();
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.Admin
             var test = _db.U3SourceEquipment.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -46,15 +44,14 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entities.U3SourceEquipment.Add(model);
-                    entities.SaveChanges();
-                }
+                var neumodel = entities.U3SourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
+                neumodel.SourceEquipment = model.SourceEquipment;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
                 return View("Update", new U3SourceEquipment());
             }
         }
-
         // GET: SourceEquipmentU3Admin
         public ActionResult Delete()
         {
@@ -74,8 +71,5 @@ namespace LoginApp.Controllers.Admin
                 return View("Delete", new U3SourceEquipment());
             }
         }
-
-
-
     }
 }
