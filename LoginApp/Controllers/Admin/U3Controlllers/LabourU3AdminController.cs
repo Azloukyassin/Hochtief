@@ -68,11 +68,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.U3Labour.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.U3Labour
+                            where x.Labour_id == id
+                            select x).FirstOrDefault();
+                entities.U3Labour.Remove(data);
+                entities.SaveChanges();
                 return View("Delete", new U3Labour());
             }
         }

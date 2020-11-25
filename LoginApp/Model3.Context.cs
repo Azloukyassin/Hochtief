@@ -27,6 +27,6 @@ namespace LoginApp
         public virtual DbSet<SourceCompanyTest> SourceCompanyTest { get; set; }
         public virtual DbSet<SourceEquipmenttest> SourceEquipmenttest { get; set; }
         public virtual DbSet<SourceRolTest> SourceRolTest { get; set; }
-        public virtual DbSet<Weathertest> Weathertest { get; set; }
+        
     }
 }

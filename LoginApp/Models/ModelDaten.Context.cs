@@ -26,6 +26,6 @@ namespace LoginApp.Models
         }
     
         public virtual DbSet<UserTab> UserTab { get; set; }
-        public virtual DbSet<Weathertest> Weathertest { get; set; }
+
     }
 }

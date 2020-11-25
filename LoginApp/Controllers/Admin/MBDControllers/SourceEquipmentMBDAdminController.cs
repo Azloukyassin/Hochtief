@@ -65,11 +65,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entities.MDBSourceEquipment.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.MDBSourceEquipment
+                            where x.SourceEquipment == id
+                            select x).FirstOrDefault();
+                entities.MDBSourceEquipment.Remove(data);
+                entities.SaveChanges(); 
                 return View("Delete", new MDBSourceEquipment());
             }
         }

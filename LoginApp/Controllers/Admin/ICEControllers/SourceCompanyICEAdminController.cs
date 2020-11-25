@@ -63,13 +63,13 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Delete(int id, ICESourceCompany model)
         {
-            using (ICEEntities entitiesA6 = new ICEEntities())
+            using (ICEEntities entities = new ICEEntities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.ICESourceCompany.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entities.ICESourceCompany
+                            where x.SourceCompany_id == id
+                            select x).FirstOrDefault();
+                entities.ICESourceCompany.Remove(data);
+                entities.SaveChanges();
                 return View("Delete", new ICESourceCompany());
             }
         }

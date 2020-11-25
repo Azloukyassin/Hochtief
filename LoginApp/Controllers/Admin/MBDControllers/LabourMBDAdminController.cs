@@ -68,11 +68,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.MDBLabour.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.MDBLabour
+                            where x.Labour_id == id
+                            select x).FirstOrDefault();
+                entities.MDBLabour.Remove(data);
+                entities.SaveChanges(); 
                 return View("Delete", new MDBLabour());
             }
         }

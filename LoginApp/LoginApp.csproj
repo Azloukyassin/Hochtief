@@ -439,9 +439,6 @@
     <Compile Include="Models\UserTab.cs">
       <DependentUpon>ModelDaten.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Weathertest.cs">
-      <DependentUpon>ModelDaten.tt</DependentUpon>
-    </Compile>
     <Compile Include="startup.cs" />
     <Compile Include="U3Labour.cs">
       <DependentUpon>ModelUBahn.tt</DependentUpon>
@@ -467,12 +464,12 @@
       <DependentUpon>A40Modell.edmx</DependentUpon>
       <LastGenOutput>A40Modell.cs</LastGenOutput>
     </Content>
-    <Content Include="assets\img\bg-masthead.jpg" />
-    <Content Include="assets\img\bg-signup.jpg" />
-    <Content Include="assets\img\demo-image-01.jpg" />
-    <Content Include="assets\img\demo-image-02.jpg" />
-    <Content Include="assets\img\favicon.ico" />
-    <Content Include="assets\img\ipad.png" />
+    <Content Include="App_Start\assets\img\bg-masthead.jpg" />
+    <Content Include="App_Start\assets\img\bg-signup.jpg" />
+    <Content Include="App_Start\assets\img\demo-image-01.jpg" />
+    <Content Include="App_Start\assets\img\demo-image-02.jpg" />
+    <Content Include="App_Start\assets\img\favicon.ico" />
+    <Content Include="App_Start\assets\img\ipad.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -738,9 +735,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\FirstLayout\Index.cshtml" />
-    <Content Include="Views\Weather\AddOrEdit.cshtml" />
     <Content Include="Views\LayoutA6\Index.cshtml" />
-    <Content Include="Views\Weather\Index.cshtml" />
     <Content Include="Views\SourceRoleA6\AddOrEdit.cshtml" />
     <Content Include="Views\SourceEquipmentA6\Index.cshtml" />
     <Content Include="Views\SourceEquipmentA6\AddOrEdit.cshtml" />

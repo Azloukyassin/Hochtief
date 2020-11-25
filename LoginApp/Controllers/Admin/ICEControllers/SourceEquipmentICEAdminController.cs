@@ -61,13 +61,14 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Delete(int id, ICESourceEquipment model)
         {
-            using (ICEEntities entitiesA6 = new ICEEntities())
+            using (ICEEntities entities = new ICEEntities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entitiesA6.ICESourceEquipment.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entities.ICESourceEquipment
+                            where x.SourceEquipment == id
+                            select x).FirstOrDefault();
+                entities.ICESourceEquipment.Remove(data);
+                entities.SaveChanges();
+
                 return View("Delete", new ICESourceEquipment());
             }
         }

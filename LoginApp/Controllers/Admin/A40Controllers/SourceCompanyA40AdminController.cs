@@ -67,13 +67,13 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Delete(int id, A40SourceCompany model)
         {
-            using (A40Entities entitiesA6 = new A40Entities())
+            using (A40Entities entities = new A40Entities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.A40SourceCompany.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entities.A40SourceCompany
+                            where x.SourceCompany_id == id
+                            select x).FirstOrDefault();
+                entities.A40SourceCompany.Remove(data);
+                entities.SaveChanges(); 
                 return View("Delete", new A40SourceCompany());
             }
         }

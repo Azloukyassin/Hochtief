@@ -70,11 +70,13 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entities = new A40Entities())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.A40Labour.Remove(model);
-                    entities.SaveChanges();
-                }
+
+                var data = (from x in entities.A40Labour
+                            where x.Labour_id == id
+                            select x).FirstOrDefault();
+                entities.A40Labour.Remove(data);
+                entities.SaveChanges();
+
                 return View("Delete", new A40Labour());
             }
         }

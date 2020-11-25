@@ -64,11 +64,12 @@ namespace LoginApp.Controllers.Admin
         {
             using (ICEEntities entities = new ICEEntities())
             {
-                if (model.Source_id == id)
-                {
-                    entities.ICESourceRole.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.ICESourceRole
+                            where x.Source_id == id
+                            select x).FirstOrDefault();
+                entities.ICESourceRole.Remove(data);
+                entities.SaveChanges(); 
+
                 return View("Delete", new ICESourceRole());
             }
         }

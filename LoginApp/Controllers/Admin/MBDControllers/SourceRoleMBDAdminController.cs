@@ -64,11 +64,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (MBDEntities entities = new MBDEntities())
             {
-                if (model.Source_id == id)
-                {
-                    entities.MDBSourceRole.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.MDBSourceRole
+                            where x.Source_id == id
+                            select x).FirstOrDefault();
+                entities.MDBSourceRole.Remove(data);
+                entities.SaveChanges(); 
                 return View("Delete", new MDBSourceRole());
             }
         }

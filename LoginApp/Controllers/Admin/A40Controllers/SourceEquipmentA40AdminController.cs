@@ -44,11 +44,13 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entitiesA40 = new A40Entities())
             {
-                if (model.SourceEquipment == id)
-                {
-                    entitiesA40.A40SourceEquipment.Add(model);
-                    entitiesA40.SaveChanges();
-                }
+                var neumodel = entitiesA40.A40SourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
+
+                neumodel.SourceEquipment = model.SourceEquipment;
+                neumodel.Code = model.Code;
+                neumodel.De_Equipment = model.De_Equipment;
+                neumodel.En_Equipment = model.En_Equipment;
+
                 return View("Update", new A40SourceEquipment());
             }
         }
@@ -63,13 +65,13 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entitiesA40 = new A40Entities())
             {
-                var neumodel = entitiesA40.A40SourceEquipment.Where(x => x.SourceEquipment == id).FirstOrDefault();
 
-                neumodel.SourceEquipment=model.SourceEquipment;
-                neumodel.Code = model.Code;
-                neumodel.De_Equipment = model.De_Equipment;
-                neumodel.En_Equipment = model.En_Equipment;
-                
+                var data = (from x in entitiesA40.A40SourceEquipment
+                            where x.SourceEquipment == id
+                            select x).FirstOrDefault();
+                entitiesA40.A40SourceEquipment.Remove(data);
+                entitiesA40.SaveChanges(); 
+
             }
                 return View("Delete", new A40SourceEquipment());
             }

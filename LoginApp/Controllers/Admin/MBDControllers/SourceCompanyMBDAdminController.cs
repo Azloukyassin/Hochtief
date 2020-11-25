@@ -63,13 +63,13 @@ namespace LoginApp.Controllers.Admin
         [HttpPost]
         public ActionResult Delete(int id, MDBSourceCompany model)
         {
-            using (MBDEntities entitiesA6 = new MBDEntities())
+            using (MBDEntities entities = new MBDEntities())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.MDBSourceCompany.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entities.MDBSourceCompany
+                            where x.SourceCompany_id == id
+                            select x).FirstOrDefault();
+                entities.MDBSourceCompany.Remove(data);
+                entities.SaveChanges();
                 return View("Delete", new MDBSourceCompany());
             }
         }

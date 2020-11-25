@@ -66,11 +66,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
-                if (model.source_id== id)
-                {
-                    entitiesA6.A6SourceRoletest.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entitiesA6.A6SourceRoletest
+                            where x.source_id == id
+                            select x).FirstOrDefault();
+                entitiesA6.A6SourceRoletest.Remove(data);
+                entitiesA6.SaveChanges();
                 return View("Delete", new A6SourceRoletest());
             }
         }

@@ -5,8 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-
-
 namespace LoginApp.Controllers.Admin.U3Controlllers
 {
     public class SourceCompanyU3AdminController : Controller
@@ -63,13 +61,13 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
         [HttpPost]
         public ActionResult Delete(int id, U3SourceCompany model)
         {
-            using (MohamedAzloukSandboxEntities10 entitiesA6 = new MohamedAzloukSandboxEntities10())
+            using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
-                if (model.SourceCompany_id == id)
-                {
-                    entitiesA6.U3SourceCompany.Remove(model);
-                    entitiesA6.SaveChanges();
-                }
+                var data = (from x in entities.U3SourceCompany
+                            where x.SourceCompany_id == id
+                            select x).FirstOrDefault();
+                entities.U3SourceCompany.Remove(data);
+                entities.SaveChanges();
                 return View("Delete", new U3SourceCompany());
             }
         }

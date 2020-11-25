@@ -67,11 +67,11 @@ namespace LoginApp.Controllers.Admin
         {
             using (ICEEntities entities = new ICEEntities())
             {
-                if (model.Labour_id == id)
-                {
-                    entities.ICELabour.Remove(model);
-                    entities.SaveChanges();
-                }
+                var data = (from x in entities.ICELabour
+                            where x.Labour_id == id
+                            select x).FirstOrDefault();
+                entities.ICELabour.Remove(data);
+                entities.SaveChanges();
                 return View("Delete", new ICELabour());
             }
         }
