@@ -45,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (A40Entities entities = new A40Entities())
             {
                 var neumodel = entities.A40Labour.Where(x => x.Labour_id == id).FirstOrDefault();
-
                 neumodel.Firstname = model.Firstname;
                 neumodel.Lastname = model.Lastname;
                 neumodel.Fullname = model.Fullname;
@@ -54,7 +53,6 @@ namespace LoginApp.Controllers.Admin
                 neumodel.Comment = model.Comment;
                 neumodel.Company = model.Company;
                 entities.SaveChanges();
-                
                 return View("Update", new A40Labour());
             }
         }
@@ -70,15 +68,14 @@ namespace LoginApp.Controllers.Admin
         {
             using (A40Entities entities = new A40Entities())
             {
-
                 var data = (from x in entities.A40Labour
                             where x.Labour_id == id
                             select x).FirstOrDefault();
                 entities.A40Labour.Remove(data);
                 entities.SaveChanges();
-
-                return View("Delete", new A40Labour());
             }
+                return View("Delete", new A40Labour());
+         }
         }
-    }
+    
 }

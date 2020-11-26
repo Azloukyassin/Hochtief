@@ -45,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MBDEntities entities = new MBDEntities())
             {
                 var neumodel = entities.MDBSourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
-
                 neumodel.SourceCompany_id = model.SourceCompany_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Frima = model.De_Frima;
@@ -70,8 +69,8 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.MDBSourceCompany.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new MDBSourceCompany());
             }
+                return View("Delete", new MDBSourceCompany());
         }
     }
 }

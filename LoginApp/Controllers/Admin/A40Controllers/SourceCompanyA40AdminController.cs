@@ -31,7 +31,6 @@ namespace LoginApp.Controllers.Admin
             {
                 modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.De_Frima.Contains(searchString) || x.En_Company.Contains(searchString) || x.Pds01.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceCompanyA40Admin
@@ -46,15 +45,12 @@ namespace LoginApp.Controllers.Admin
             using (A40Entities entitiesA40 = new A40Entities())
             {
                 var neumodel = entitiesA40.A40SourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
-
                 neumodel.SourceCompany_id = model.SourceCompany_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Frima = model.De_Frima;
                 neumodel.Pds01 = model.Pds01;
                 neumodel.En_Company= model.En_Company;
-                
                 entitiesA40.SaveChanges();
-            
                 return View("Update", new A40SourceCompany());
             }
         }
@@ -73,9 +69,10 @@ namespace LoginApp.Controllers.Admin
                             where x.SourceCompany_id == id
                             select x).FirstOrDefault();
                 entities.A40SourceCompany.Remove(data);
-                entities.SaveChanges(); 
-                return View("Delete", new A40SourceCompany());
+                entities.SaveChanges();
             }
+                return View("Delete", new A40SourceCompany());
+            
         }
     }
 }

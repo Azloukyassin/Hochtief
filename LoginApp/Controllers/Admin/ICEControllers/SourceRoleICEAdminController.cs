@@ -30,7 +30,6 @@ namespace LoginApp.Controllers.Admin
             {
                 modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.De_Role.Contains(searchString) || x.En_Role.Contains(searchString)); 
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceRoleICEAdmin
@@ -45,7 +44,6 @@ namespace LoginApp.Controllers.Admin
             using (ICEEntities entities = new ICEEntities())
             {
                 var neumodel = entities.ICESourceRole.Where(x => x.Source_id == id).FirstOrDefault();
-
                 neumodel.Source_id = model.Source_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Role = model.De_Role;
@@ -69,7 +67,6 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.ICESourceRole.Remove(data);
                 entities.SaveChanges(); 
-
                 return View("Delete", new ICESourceRole());
             }
         }

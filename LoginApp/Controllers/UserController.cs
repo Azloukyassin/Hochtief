@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls.WebParts;
-
 namespace LoginApp.Controllers
 {
     public class UserController : Controller

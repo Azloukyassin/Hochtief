@@ -22,7 +22,6 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A40SourceEquipment.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {
@@ -32,7 +31,6 @@ namespace LoginApp.Controllers.A6Controllers
             {
                 modelquery = modelquery.Where(x => x.Code.Contains(searchString) || x.CodeCompany.Contains(searchString) || x.De_Equipment.Contains(searchString) || x.En_Equipment.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
         // GET: SourceEquipmentA40

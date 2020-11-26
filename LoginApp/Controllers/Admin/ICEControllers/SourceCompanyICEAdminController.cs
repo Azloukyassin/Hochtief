@@ -70,8 +70,8 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.ICESourceCompany.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new ICESourceCompany());
             }
+                return View("Delete", new ICESourceCompany());
         }
     }
 }

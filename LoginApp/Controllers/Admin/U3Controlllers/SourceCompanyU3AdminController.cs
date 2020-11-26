@@ -43,7 +43,6 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
                 var neumodel = entities.U3SourceCompany.Where(x => x.SourceCompany_id == id).FirstOrDefault();
-
                 neumodel.SourceCompany_id = model.SourceCompany_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Frima = model.De_Frima;
@@ -68,8 +67,8 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
                             select x).FirstOrDefault();
                 entities.U3SourceCompany.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new U3SourceCompany());
             }
+                return View("Delete", new U3SourceCompany());
         }
     }
 }

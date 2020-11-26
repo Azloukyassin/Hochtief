@@ -12,7 +12,6 @@ namespace LoginApp.Controllers.Admin
     public class SourceRoleA6AdminController : Controller
     {
         MohamedAzloukSandboxEntitiesA6 _db;
-
         public SourceRoleA6AdminController()
         {
             _db = new MohamedAzloukSandboxEntitiesA6();
@@ -46,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
                 var neumodel = entitiesA6.A6SourceRoletest.Where(x => x.source_id == id).FirstOrDefault();
-
                 neumodel.source_id= model.source_id;
                 neumodel.code = model.code;
                 neumodel.De_Role = model.De_Role;
@@ -54,7 +52,6 @@ namespace LoginApp.Controllers.Admin
                 return View("Update", new A6SourceRoletest());
             }
         }
-
         // GET: SourceRoleA6Admin
         public ActionResult Delete()
         {
@@ -71,11 +68,9 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entitiesA6.A6SourceRoletest.Remove(data);
                 entitiesA6.SaveChanges();
-                return View("Delete", new A6SourceRoletest());
             }
+                return View("Delete", new A6SourceRoletest());
+            
         }
-
-
-
     }
 }

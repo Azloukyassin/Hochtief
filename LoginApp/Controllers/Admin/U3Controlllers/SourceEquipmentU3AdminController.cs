@@ -68,8 +68,8 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.U3SourceEquipment.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new U3SourceEquipment());
             }
+                return View("Delete", new U3SourceEquipment());
         }
     }
 }

@@ -22,7 +22,6 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A6SourceEquipmenttest.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(String searchString)
         {

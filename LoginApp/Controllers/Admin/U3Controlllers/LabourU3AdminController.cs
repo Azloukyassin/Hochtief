@@ -44,7 +44,6 @@ namespace LoginApp.Controllers.Admin
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
                 var neumodel = entities.U3Labour.Where(x => x.Labour_id == id).FirstOrDefault();
-
                 neumodel.Firstname = model.Firstname;
                 neumodel.Lastname = model.Lastname;
                 neumodel.Fullname = model.Fullname;
@@ -54,8 +53,6 @@ namespace LoginApp.Controllers.Admin
                 neumodel.Company = model.Company;
                 return View("Update", new U3Labour());
             }
-           
-            
         }
         // GET: LabourU3Admin
         public ActionResult Delete()

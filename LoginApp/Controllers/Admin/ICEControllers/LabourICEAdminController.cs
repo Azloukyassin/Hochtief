@@ -45,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (ICEEntities entities = new ICEEntities())
             {
                 var neumodel = entities.ICELabour.Where(x => x.Labour_id == id).FirstOrDefault();
-
                 neumodel.Firstname = model.Firstname;
                 neumodel.Lastname = model.Lastname;
                 neumodel.Fullname = model.Fullname;
@@ -72,8 +71,9 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.ICELabour.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new ICELabour());
             }
+                return View("Delete", new ICELabour());
         }
     }
 }
+

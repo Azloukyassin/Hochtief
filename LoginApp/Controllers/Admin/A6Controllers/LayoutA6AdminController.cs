@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace LoginApp.Controllers.Admin
 {
-
 // Layout Full Done ! 
     public class LayoutA6AdminController : Controller
     {

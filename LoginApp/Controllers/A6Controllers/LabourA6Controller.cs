@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -23,9 +22,7 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A6Labourtest.ToList();
             return View(test);
         }
-
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["Getdetails"] = searchString;
@@ -34,10 +31,8 @@ namespace LoginApp.Controllers.A6Controllers
             {
                 modelquery = modelquery.Where(x => x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.fullname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.area.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
-
         // GET: LabourA6
         public ActionResult AddOrEdit(int id = 0)
         {

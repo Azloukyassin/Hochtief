@@ -45,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MBDEntities entities = new MBDEntities())
             {
                 var neumodel = entities.MDBSourceRole.Where(x => x.Source_id == id).FirstOrDefault();
-
                 neumodel.Source_id = model.Source_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Role = model.De_Role;

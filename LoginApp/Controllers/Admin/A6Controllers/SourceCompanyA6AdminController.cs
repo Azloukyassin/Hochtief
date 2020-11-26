@@ -31,7 +31,6 @@ namespace LoginApp.Controllers.Admin
             {
                 modelquery = modelquery.Where(x => x.De_Firma.Contains(searchString) || x.En_Company.Contains(searchString) || x.Code.Contains(searchString) || x.Company_type.Contains(searchString) || x.pds01.Contains(searchString)); 
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceCompanyA6Admin
@@ -46,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
                 var neumodel = entitiesA6.A6SourceCompanytest.Where(x => x.sourceCompany_id == id).FirstOrDefault();
-
                 neumodel.sourceCompany_id = model.sourceCompany_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Firma= model.De_Firma;
@@ -70,9 +68,10 @@ namespace LoginApp.Controllers.Admin
                             where x.sourceCompany_id == id
                             select x).FirstOrDefault();
                 entitiesA6.A6SourceCompanytest.Remove(data);
-                entitiesA6.SaveChanges(); 
-                return View("Delete", new A6SourceCompanytest());
+                entitiesA6.SaveChanges();
             }
+                return View("Delete", new A6SourceCompanytest());
+            
         }
     }
 }

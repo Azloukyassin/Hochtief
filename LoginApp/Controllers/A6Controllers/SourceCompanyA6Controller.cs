@@ -5,8 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-
-
 namespace LoginApp.Controllers.A6Controllers
 {
     public class SourceCompanyA6Controller : Controller
@@ -25,7 +23,6 @@ namespace LoginApp.Controllers.A6Controllers
         }
         // Filter With Functionalty 
         [HttpGet]
-
         public async Task<ActionResult> Index(String searchString)
         {
             ViewData["GetDetails"] = searchString;

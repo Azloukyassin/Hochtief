@@ -73,8 +73,9 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entitiesA6.A6Labourtest.Remove(data);
                 entitiesA6.SaveChanges();
-                return View("Delete", new A6Labourtest());
             }
+                return View("Delete", new A6Labourtest());
+            
         }
     }
 }

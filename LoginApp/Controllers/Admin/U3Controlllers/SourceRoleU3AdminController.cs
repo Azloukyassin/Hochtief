@@ -44,7 +44,6 @@ namespace LoginApp.Controllers.Admin
             using (MohamedAzloukSandboxEntities10 entities = new MohamedAzloukSandboxEntities10())
             {
                 var neumodel = entities.U3SourceRole.Where(x => x.Source_id == id).FirstOrDefault();
-
                 neumodel.Source_id = model.Source_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Role = model.De_Role;
@@ -68,8 +67,8 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.U3SourceRole.Remove(data);
                 entities.SaveChanges();
-                return View("Delete", new U3SourceRole());
             }
+                return View("Delete", new U3SourceRole());
         }
     }
 }

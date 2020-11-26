@@ -45,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
             {
                 var neumodel = entitiesA6.A6SourceEquipmenttest.Where(x => x.sourceEq_id == id).FirstOrDefault();
-
                 neumodel.sourceEq_id = model.sourceEq_id;
                 neumodel.Code = model.Code;
                 neumodel.De_Equipment = model.De_Equipment;
@@ -69,8 +68,9 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entitiesA6.A6SourceEquipmenttest.Remove(data);
                 entitiesA6.SaveChanges();
-                return View("Delete", new A6SourceEquipmenttest());
             }
+                return View("Delete", new A6SourceEquipmenttest());
+            
         }
     }
 }

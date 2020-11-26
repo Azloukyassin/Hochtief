@@ -31,7 +31,6 @@ namespace LoginApp.Controllers.Admin
             {
                 modelquery = modelquery.Where(x => x.Fullname.Contains(searchString) || x.Firstname.Contains(searchString) || x.Lastname.Contains(searchString) || x.Position.Contains(searchString) || x.Company.Contains(searchString) || x.Comment.Contains(searchString) || x.Area.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync()); 
           }  
         // GET: LabourMBDAdmin
@@ -46,7 +45,6 @@ namespace LoginApp.Controllers.Admin
             using (MBDEntities entities = new MBDEntities())
             {
                 var neumodel = entities.MDBLabour.Where(x => x.Labour_id == id).FirstOrDefault();
-
                 neumodel.Firstname = model.Firstname;
                 neumodel.Lastname = model.Lastname;
                 neumodel.Fullname = model.Fullname;
@@ -72,9 +70,10 @@ namespace LoginApp.Controllers.Admin
                             where x.Labour_id == id
                             select x).FirstOrDefault();
                 entities.MDBLabour.Remove(data);
-                entities.SaveChanges(); 
-                return View("Delete", new MDBLabour());
+                entities.SaveChanges();
             }
+                return View("Delete", new MDBLabour());
+            
         }
     }
 }

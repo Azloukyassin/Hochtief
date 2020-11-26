@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<LoginApp.U3Labour>
-
 @{
     ViewBag.Title = "List";
 }
-
 <h2>Alle Einträge </h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -35,10 +32,8 @@
         <th>
             @Html.DisplayNameFor(model => model.Position)
         </th>
-       
         <th></th>
     </tr>
-
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -64,8 +59,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Position)
-        </td>
-      
+        </td> 
         <td>
             @Html.ActionLink("Update", "Update", new {  id=item.Labour_id }) |
           
@@ -73,5 +67,4 @@
         </td>
     </tr>
 }
-
 </table>

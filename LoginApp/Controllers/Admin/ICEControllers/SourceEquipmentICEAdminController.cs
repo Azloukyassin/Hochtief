@@ -68,7 +68,6 @@ namespace LoginApp.Controllers.Admin
                             select x).FirstOrDefault();
                 entities.ICESourceEquipment.Remove(data);
                 entities.SaveChanges();
-
                 return View("Delete", new ICESourceEquipment());
             }
         }

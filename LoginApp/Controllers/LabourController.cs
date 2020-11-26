@@ -23,7 +23,7 @@ namespace LoginApp.Controllers
                 model.SaveChanges();
             }
             ModelState.Clear();
-            ViewBag.SuccessMessage = "Registration Successful ";
+            ViewBag.SuccessMessage = "Registration Successful";
             return View("AddOrEdit", new Labourtest());
         }
     }

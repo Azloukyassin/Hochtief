@@ -69,9 +69,9 @@ namespace LoginApp.Controllers.Admin
                             where x.Source_id == id
                             select x).FirstOrDefault();
                 entitiesA40.A40SourceRole.Remove(data);
-                entitiesA40.SaveChanges(); 
-                return View("Delete", new A40SourceRole());
+                entitiesA40.SaveChanges();
             }
+                return View("Delete", new A40SourceRole()); 
         }
     }
 }

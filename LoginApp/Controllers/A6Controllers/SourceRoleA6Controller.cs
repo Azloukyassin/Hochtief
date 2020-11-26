@@ -11,7 +11,6 @@ namespace LoginApp.Controllers.A6Controllers
 {
     public class SourceRoleA6Controller : Controller
     {
-
         MohamedAzloukSandboxEntitiesA6 _db;
         public SourceRoleA6Controller()
         {
@@ -23,7 +22,6 @@ namespace LoginApp.Controllers.A6Controllers
             var test = _db.A6SourceRoletest.ToList();
             return View(test);
         }
-
         [HttpGet]
         public async Task<ActionResult> Index(string searchString)
         {
@@ -34,12 +32,8 @@ namespace LoginApp.Controllers.A6Controllers
             {
                 modelquery = modelquery.Where(x => x.En_Role.Contains(searchString) || x.De_Role.Contains(searchString) || x.code.Contains(searchString));
             }
-
             return View(await modelquery.AsNoTracking().ToListAsync());
-
         }
-
-
         // GET: SourceRoleA6
         public ActionResult AddOrEdit(int id = 0)
         {

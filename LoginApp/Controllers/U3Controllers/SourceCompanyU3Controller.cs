@@ -49,7 +49,7 @@ namespace LoginApp.Controllers.A6Controllers
                 model.SaveChanges();
             }
             ModelState.Clear();
-            ViewBag.SuccessMessage = "Registration Successful ";
+            ViewBag.SuccessMessage = "Registration Successful";
             return View("AddOrEdit", new U3SourceCompany());
         }
     }

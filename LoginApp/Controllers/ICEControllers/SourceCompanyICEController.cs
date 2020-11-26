@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-
 namespace LoginApp.Controllers.A6Controllers
 {
     public class SourceCompanyICEController : Controller

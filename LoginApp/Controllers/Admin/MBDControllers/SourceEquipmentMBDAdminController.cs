@@ -69,9 +69,9 @@ namespace LoginApp.Controllers.Admin
                             where x.SourceEquipment == id
                             select x).FirstOrDefault();
                 entities.MDBSourceEquipment.Remove(data);
-                entities.SaveChanges(); 
-                return View("Delete", new MDBSourceEquipment());
+                entities.SaveChanges();
             }
+                return View("Delete", new MDBSourceEquipment());   
         }
     }
 }
