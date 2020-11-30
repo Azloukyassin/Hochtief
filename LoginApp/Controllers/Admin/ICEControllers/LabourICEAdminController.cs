@@ -33,6 +33,7 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // Fonction Create is Done ! 
         // GET: LabourICEAdmin 
         public ActionResult Create(int id=0)
         {
