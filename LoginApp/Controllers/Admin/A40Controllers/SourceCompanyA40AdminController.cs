@@ -34,6 +34,24 @@ namespace LoginApp.Controllers.Admin
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceCompanyA40Admin
+        public ActionResult Create(int id=0)
+        {
+            A40SourceCompany a40SourceCompany = new A40SourceCompany();
+            return View(a40SourceCompany);
+        }
+        [HttpPost]
+        public ActionResult Create(A40SourceCompany a40SourceCompany)
+        {
+            using (A40Entities model = new A40Entities())
+            {
+                model.A40SourceCompany.Add(a40SourceCompany);
+                model.SaveChanges();
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful ";
+            return View("Create", new A40SourceCompany());
+        }
+        // GET: SourceCompanyA40Admin
         public ActionResult Update()
         {
             A40SourceCompany model = new A40SourceCompany();

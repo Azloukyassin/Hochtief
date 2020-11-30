@@ -31,6 +31,24 @@ namespace LoginApp.Controllers.Admin.U3Controlllers
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceCompanyU3Admin 
+        public ActionResult Create(int id=0)
+        {
+            U3SourceCompany u3SourceCompany = new U3SourceCompany();
+            return View(u3SourceCompany); 
+        }
+        [HttpPost]
+        public ActionResult Create(U3SourceCompany u3SourceCompany)
+        {
+            using(MohamedAzloukSandboxEntities10 entitie = new MohamedAzloukSandboxEntities10())
+            {
+                entitie.U3SourceCompany.Add(u3SourceCompany);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new U3SourceCompany()); 
+        }
         // GET: SourceCompanyU3Admin
         public ActionResult Update()
         {

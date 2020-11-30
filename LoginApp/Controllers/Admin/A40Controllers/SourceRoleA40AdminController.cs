@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceRoleA40Admin 
+        public ActionResult Create(int id=0)
+        {
+            A40SourceRole a40SourceRole = new A40SourceRole();
+            return View(a40SourceRole);
+        }
+        [HttpPost]
+        public ActionResult Create(A40SourceRole a40SourceRole)
+        {
+            using (A40Entities model = new A40Entities())
+            {
+                model.A40SourceRole.Add(a40SourceRole);
+                model.SaveChanges();
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful ";
+            return View("Create", new A40SourceRole());
+        }
         // GET: SourceRoleA40Admin
         public ActionResult Update()
         {

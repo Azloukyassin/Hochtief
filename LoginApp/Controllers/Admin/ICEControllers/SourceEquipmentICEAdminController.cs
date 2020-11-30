@@ -52,6 +52,24 @@ namespace LoginApp.Controllers.Admin
                 return View("Update", new ICESourceEquipment());
             }
         }
+        // GET: SourceEquipmentICEAdmin 
+        public ActionResult Create(int id=0)
+        {
+            ICESourceEquipment iCESourceEquipment = new ICESourceEquipment();
+            return View(iCESourceEquipment); 
+        }
+        [HttpPost]
+        public ActionResult Create(ICESourceEquipment iCESourceEquipment)
+        {
+            using(ICEEntities entities = new ICEEntities())
+            {
+                entities.ICESourceEquipment.Add(iCESourceEquipment);
+                entities.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = " Registration Successful";
+            return View("Create", new ICESourceEquipment()); 
+        }
         // GET: SourceEquipmentICEAdmin
         public ActionResult Delete()
         {

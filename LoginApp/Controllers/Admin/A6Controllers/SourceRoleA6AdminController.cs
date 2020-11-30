@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceRoleA6Admin 
+        public ActionResult Create(int id = 0)
+        {
+            A6SourceRoletest a6SourceRoletest = new A6SourceRoletest();
+            return View(a6SourceRoletest); 
+        }
+        [HttpPost]
+        public ActionResult Create(A6SourceRoletest a6SourceRoletest)
+        {
+            using (MohamedAzloukSandboxEntitiesA6 entitiesA6 = new MohamedAzloukSandboxEntitiesA6())
+            {
+                entitiesA6.A6SourceRoletest.Add(a6SourceRoletest);
+                entitiesA6.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new A6SourceRoletest());
+        }
         // GET: SourceRoleA6Admin
         public ActionResult Update()
         {

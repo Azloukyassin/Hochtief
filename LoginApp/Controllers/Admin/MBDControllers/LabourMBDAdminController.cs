@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
           }  
+        // GET: LabourMBDAdmin 
+        public ActionResult Create(int id=0)
+        {
+            MDBLabour mDBLabour = new MDBLabour();
+            return View(mDBLabour); 
+        }
+        [HttpPost]
+        public ActionResult Create(MDBLabour mDBLabour)
+        {
+            using(MBDEntities entitie = new MBDEntities())
+            {
+                entitie.MDBLabour.Add(mDBLabour);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new MDBLabour()); 
+        }
         // GET: LabourMBDAdmin
         public ActionResult Update()
         {

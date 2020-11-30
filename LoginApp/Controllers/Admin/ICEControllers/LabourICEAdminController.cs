@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: LabourICEAdmin 
+        public ActionResult Create(int id=0)
+        {
+            ICELabour iCELabour = new ICELabour();
+            return View(iCELabour); 
+        }
+        [HttpPost]
+        public ActionResult Create(ICELabour iCELabour)
+        {
+            using(ICEEntities entities = new ICEEntities())
+            {
+                entities.ICELabour.Add(iCELabour);
+                entities.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new ICELabour()); 
+        }
         // GET: LabourICEAdmin
         public ActionResult Update()
         {

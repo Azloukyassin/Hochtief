@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET:LabourA40Admin
+        public ActionResult Create(int id=0)
+        {
+            A40Labour a40Labour = new A40Labour();
+            return View(a40Labour);
+        }
+        [HttpPost]
+        public ActionResult Create(A40Labour a40Labour)
+        {
+            using (A40Entities model = new A40Entities())
+            {
+                model.A40Labour.Add(a40Labour);
+                model.SaveChanges();
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new A40Labour());
+        }
         // GET: LabourA40Admin
         public ActionResult Update()
         {

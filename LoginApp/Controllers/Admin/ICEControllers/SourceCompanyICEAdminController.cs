@@ -33,6 +33,25 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+
+        // GET: SourceCompanyICEAdmin 
+        public ActionResult Create(int id=0)
+        {
+            ICESourceCompany iCESourceCompany = new ICESourceCompany();
+            return View(iCESourceCompany); 
+        }
+        [HttpPost]
+        public ActionResult Create(ICESourceCompany iCESourceCompany)
+        {
+            using(ICEEntities model = new ICEEntities())
+            {
+                model.ICESourceCompany.Add(iCESourceCompany);
+                model.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new ICESourceCompany());
+        }
         // GET: SourceCompanyICEAdmin
         public ActionResult Update()
         {

@@ -34,6 +34,24 @@ namespace LoginApp.Controllers.Admin
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
         // GET: SourceCompanyA6Admin
+        public ActionResult Create(int id=0)
+        {
+            A6SourceCompanytest a6SourceCompanytest = new A6SourceCompanytest();
+            return View(a6SourceCompanytest);
+        }
+        [HttpPost]
+        public ActionResult Create(A6SourceCompanytest a6SourceCompanytest)
+        {
+            using (MohamedAzloukSandboxEntitiesA6 model = new MohamedAzloukSandboxEntitiesA6())
+            {
+                model.A6SourceCompanytest.Add(a6SourceCompanytest);
+                model.SaveChanges();
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful ";
+            return View("Create", new A6SourceCompanytest());
+        }
+        // GET: SourceCompanyA6Admin
         public ActionResult Update()
         {
             A6SourceCompanytest model = new A6SourceCompanytest();

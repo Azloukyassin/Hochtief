@@ -857,6 +857,26 @@
     <Content Include="Views\SourceRoleMBDAdmin\Index.cshtml" />
     <Content Include="Views\SourceRoleMBDAdmin\Update.cshtml" />
     <Content Include="Views\SourceRoleMBDAdmin\Delete.cshtml" />
+    <Content Include="Views\LabourA40Admin\Create.cshtml" />
+    <Content Include="Views\SourceCompanyA40Admin\Create.cshtml" />
+    <Content Include="Views\SourceEquipmentA40Admin\Create.cshtml" />
+    <Content Include="Views\SourceRoleA40Admin\Create.cshtml" />
+    <Content Include="Views\LabourA6Admin\Create.cshtml" />
+    <Content Include="Views\SourceCompanyA6Admin\Create.cshtml" />
+    <Content Include="Views\SourceEquipmentA6Admin\Create.cshtml" />
+    <Content Include="Views\SourceRoleA6Admin\Create.cshtml" />
+    <Content Include="Views\LabourICEAdmin\Create.cshtml" />
+    <Content Include="Views\SourceCompanyICEAdmin\Create.cshtml" />
+    <Content Include="Views\SourceEquipmentICEAdmin\Create.cshtml" />
+    <Content Include="Views\SourceRoleICEAdmin\Create.cshtml" />
+    <Content Include="Views\LabourMBDAdmin\Create.cshtml" />
+    <Content Include="Views\SourceCompanyMBDAdmin\Create.cshtml" />
+    <Content Include="Views\SourceEquipmentMBDAdmin\Create.cshtml" />
+    <Content Include="Views\SourceRoleMBDAdmin\Create.cshtml" />
+    <Content Include="Views\LabourU3Admin\Create.cshtml" />
+    <Content Include="Views\SourceCompanyU3Admin\Create.cshtml" />
+    <Content Include="Views\SourceEquipmentU3Admin\Create.cshtml" />
+    <Content Include="Views\SourceRoleU3Admin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

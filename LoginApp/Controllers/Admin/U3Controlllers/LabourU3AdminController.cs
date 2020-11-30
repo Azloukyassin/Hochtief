@@ -32,6 +32,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: LabourU3Admin 
+        public ActionResult Create(int id=0)
+        {
+            U3Labour u3Labour = new U3Labour();
+            return View(u3Labour); 
+        }
+        [HttpPost]
+        public ActionResult Create(U3Labour u3Labour)
+        {
+            using (MohamedAzloukSandboxEntities10 entitie = new MohamedAzloukSandboxEntities10())
+            {
+                entitie.U3Labour.Add(u3Labour);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new U3Labour()); 
+        }
         // GET: LabourU3Admin
         public ActionResult Update()
         {

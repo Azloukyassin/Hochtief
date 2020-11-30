@@ -34,6 +34,24 @@ namespace LoginApp.Controllers.Admin
 
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceEquimentMBDAdmin 
+        public ActionResult Create(int id =0)
+        {
+            MDBSourceEquipment mDBSourceEquipment = new MDBSourceEquipment();
+            return View(mDBSourceEquipment); 
+        }
+        [HttpPost]
+        public ActionResult Create(MDBSourceEquipment mDBSourceEquipment)
+        {
+            using(MBDEntities entitie = new MBDEntities())
+            {
+                entitie.MDBSourceEquipment.Add(mDBSourceEquipment);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SucessMessage = "Registration Successful";
+            return View("Create", new MDBSourceEquipment()); 
+        }
         // GET: SourceEquipmentMBDAdmin
         public ActionResult Update()
         {

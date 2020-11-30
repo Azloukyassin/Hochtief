@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceRoleMBDAdmin 
+        public ActionResult Create(int id=0)
+        {
+            MDBSourceRole mDBSourceRole = new MDBSourceRole();
+            return View(mDBSourceRole); 
+        }
+        [HttpPost]
+        public ActionResult Create(MDBSourceRole mDBSourceRole)
+        {
+            using(MBDEntities entitie = new MBDEntities())
+            {
+                entitie.MDBSourceRole.Add(mDBSourceRole);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new MDBSourceRole()); 
+        }
         // GET: SourceRoleMBDAdmin
         public ActionResult Update()
         {

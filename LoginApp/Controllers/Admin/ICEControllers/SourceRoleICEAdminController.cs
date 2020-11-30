@@ -32,6 +32,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceRoleICEAdmin 
+        public ActionResult Create(int id =0)
+        {
+            ICESourceRole iCESourceRole = new ICESourceRole();
+            return View(iCESourceRole); 
+        }
+        [HttpPost]
+        public ActionResult Create(ICESourceRole iCESourceRole)
+        {
+            using(ICEEntities entitie = new ICEEntities())
+            {
+                entitie.ICESourceRole.Add(iCESourceRole);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful";
+            return View("Create", new ICESourceRole()); 
+        }
         // GET: SourceRoleICEAdmin
         public ActionResult Update()
         {

@@ -32,6 +32,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync()); 
         }
+        // GET: SourceRoleU3Admin 
+        public ActionResult Create(int id=0)
+        {
+            U3SourceRole u3SourceRole = new U3SourceRole();
+            return View(u3SourceRole); 
+        }
+        [HttpPost]
+        public ActionResult Create(U3SourceRole u3SourceRole)
+        {
+            using (MohamedAzloukSandboxEntities10 entitie = new MohamedAzloukSandboxEntities10())
+            {
+                entitie.U3SourceRole.Add(u3SourceRole);
+                entitie.SaveChanges(); 
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = " Registration Successful";
+            return View("Create", new U3SourceRole()); 
+        }
         // GET: SourceRoleU3Admin
         public ActionResult Update()
         {

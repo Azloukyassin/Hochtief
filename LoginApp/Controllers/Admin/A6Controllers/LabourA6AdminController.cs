@@ -33,6 +33,24 @@ namespace LoginApp.Controllers.Admin
             }
             return View(await modelquery.AsNoTracking().ToListAsync());
         }
+        // GET: LabourA6Admin 
+        public ActionResult Create(int id=0)
+        {
+            A6Labourtest a6Labourtest = new A6Labourtest();
+            return View(a6Labourtest);
+        }
+        [HttpPost]
+        public ActionResult Create(A6Labourtest a6Labourtest)
+        {
+            using (MohamedAzloukSandboxEntitiesA6 model = new MohamedAzloukSandboxEntitiesA6())
+            {
+                model.A6Labourtest.Add(a6Labourtest);
+                model.SaveChanges();
+            }
+            ModelState.Clear();
+            ViewBag.SuccessMessage = "Registration Successful ";
+            return View("Create", new A6Labourtest());
+        }
         // GET: LabourA6Admin
         // Fonctionality is't not Done ! 
         public ActionResult Update()
